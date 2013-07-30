@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Javascript per creare l'effetto delle immagini scorrevoli</title>
+</head>
+<body>
+
+<br>
+<center><h1>USARE JAVASCRIPT PER CREARE L'EFFETTO DI IMMAGINI SCORREVOLI</h1></center>
+<center><h3>Passando con il mouse sopra l'immagine lo scorrimento si blocca</h3></center>
+<br>
+<br>
+ 
+<script language="JavaScript1.2">
+<!--
+ 
+//Larghezza dello slider in pixels
+var larghezzaSlider=1000
+//Velocità dello scorrimento (un numero più grande equivale a uno scorrimento più veloce)
+var velocitaSlide=80
+
+//Definisce un array con il link alle immagini
+var mieSlide=new Array()
+	mieSlide[0]='<a href="img/1.png"><img src="img/1.png" border=1></a>'
+	mieSlide[1]='<a href="img/2.png"><img src="img/2.png" border=1></a>'
+	mieSlide[2]='<a href="img/3.png"><img src="img/3.png" border=1></a>'
+	
+var slidesFinali=''
+//Ciclo che copia il contenuto dell'array in un unica variabile (slidefinale)
+for (i=0;i<mieSlide.length;i++)slidesFinali=slidesFinali+mieSlide[i]+"&nbsp;&nbsp;"
+
+
+if (document.all)
+{
+	//Genera in modo dinamico il tag marquee
+	document.write('<marquee id="ieslider" scrollAmount=0 style="width:'+larghezzaSlider+'">'+slidesFinali+'</marquee>')
+	//Funzione che ferma il tag marquee disabilitandolo quando il mouse è sopra l'immagine (evento onmouseover)
+	ieslider.onmouseover=new Function("ieslider.scrollAmount=0")
+	//Riabilita il tag marquee quando il mouse non è più sopra l'immagine (evento onmouseout)
+	ieslider.onmouseout=new Function("if (document.readyState=='complete') ieslider.scrollAmount=velocitaSlide")
+}
+
+function rigenera()
+{
+	window.location.reload()
+}
+
+function rigenera2()
+{
+	if (document.layers)
+	{
+		document.ns_slider01.visibility="show"
+		inizializza()
+	}
+	if (document.all)ieslider.scrollAmount=velocitaSlide
+}
+
+//Funzione per l'inizializzazione dello slider nell'evento page load
+function inizializza()
+{
+	document.ns_slider01.document.ns_slider02.document.write('<nobr>'+slidesFinali+'</nobr>')
+	document.ns_slider01.document.ns_slider02.document.close()
+	scorriPresentazione()
+}
+
+// Funzione per lo scorrimento dello slideshow
+function scorriPresentazione()
+{
+	if (document.ns_slider01.document.ns_slider02.left>=document.ns_slider01.document.ns_slider02.document.width*(-1))
+	{
+		document.ns_slider01.document.ns_slider02.left-=velocitaSlide
+	}
+	else
+	{
+		document.ns_slider01.document.ns_slider02.left=larghezzaSlider
+		scorriPresentazione()
+	}
+}
+window.onload=rigenera2
+
+//-->
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Torino Friends</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="css/eventi.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">Torino<span class="logo_colour"> Friends</span></a></h1>
+          <h2>Il social network della città di Torino.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">Principale</a></li>
+            <li><a href="#">Eventi</a>
+              <ul>
+                <li><a href="nuovo.html">Crea nuovo</a></li>
+                <li><a href="eventi.html">Lista eventi</a>
+              </ul>
+            </li>
+            <li><a href="info.html">Informazioni</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+	<div id="site_content">
+	
+	    <!-- inizio galleria delle immagini HTML  -->
+
+      <div class="navigation-container">
+        <div id="thumbs" class="navigation">
+          <a class="pageLink prev" style="visibility: hidden;" href="#" title="Previous Page"></a>
+          <ul class="thumbs noscript">
+            <li>
+              <a class="thumb" href="images/1.jpg"><img src="images/1_thumb.jpg" alt="1" /></a>
+              <div class="caption">
+                <div class="image-title eventi">&quot;Piazza San Carlo - Sit in del pomeriggio tardi&quot;</div>
+              </div>
+            </li>
+            <li>
+              <a class="thumb" href="images/2.jpg"><img src="images/2_thumb.jpg" alt="2" /></a>
+              <div class="caption">
+                <div class="image-title eventi">&quot;Piazza Vittorio Veneto - Aperitivo all'imbrunire&quot;</div>
+              </div>
+            </li>
+            <li>
+              <a class="thumb" href="images/3.jpg"><img src="images/3_thumb.jpg" alt="3" /></a>
+              <div class="caption">
+                <div class="image-title eventi">&quot;Ponte isabella - Maratona notturna&quot;</div>
+              </div>
+            </li>
+            <li>
+              <a class="thumb" href="images/4.jpg"><img src="images/4_thumb.jpg" alt="4" /></a>
+              <div class="caption">
+                <div class="image-title eventi">&quot;Parco del Valentino - Gara di canottaggio&quot;</div>
+              </div>
+            </li>
+          </ul>
+          <a class="pageLink next" style="visibility: hidden;" href="#" title="Next Page"></a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="slideshow-container">
+          <div id="loading" class="loader"></div>
+          <div id="slideshow" class="slideshow"></div>
+          <div id="controls" class="controls eventi"></div>
+          <div id="caption" class="caption-container"></div>
+        </div>
+      </div>
+	
+      <!-- galleria delle immagini HTML -->
+	  
+	  
+	</div>
+	
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images2/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Principale</a> | <a href="nuovo.html">Nuovo evento</a> | <a href="eventi.html">Lista eventi</a> | <a href="info.html">Informazioni</a></p>
+      <p>Creato da Ian Borrelli &copy; 2013</p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+  
+  <script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+  <script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      // we only want these styles applied when javascript is enabled
+      $('div.content').css('display', 'block');
+      // initially set opacity on thumbs and add additional styling for hover effect on thumbs
+      var onMouseOutOpacity = 0.67;
+      $('#thumbs ul.thumbs li, div.navigation a.pageLink').opacityrollover({
+        mouseOutOpacity:   onMouseOutOpacity,
+        mouseOverOpacity:  1.0,
+        fadeSpeed:         'fast',
+        exemptionSelector: '.selected'
+      });
+      // initialize advanced galleriffic gallery
+      var gallery = $('#thumbs').galleriffic({
+        delay:                     3500,
+        numThumbs:                 10,
+        preloadAhead:              10,
+        enableTopPager:            false,
+        enableBottomPager:         false,
+        imageContainerSel:         '#slideshow',
+        controlsContainerSel:      '#controls',
+        captionContainerSel:       '#caption',
+        loadingContainerSel:       '#loading',
+        renderSSControls:          true,
+        renderNavControls:         true,
+        playLinkText:              'Avvia presentazione',
+        pauseLinkText:             'Ferma presentazione',
+        prevLinkText:              '&lsaquo; Foto precedente',
+        nextLinkText:              'Foto successiva &rsaquo;',
+        nextPageLinkText:          '>> &rsaquo;',
+        prevPageLinkText:          '&lsaquo; <<',
+        enableHistory:             true,
+        autoStart:                 false,
+        syncTransitions:           true,
+        defaultTransitionDuration: 900,
+        onSlideChange:             function(prevIndex, nextIndex) {
+          // 'this' refers to the gallery, which is an extension of $('#thumbs')
+          this.find('ul.thumbs').children()
+            .eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+            .eq(nextIndex).fadeTo('fast', 1.0);
+
+          // update the photo index display
+          this.$captionContainer.find('div.photo-index')
+            .html('Photo '+ (nextIndex+1) +' of '+ this.data.length);
+        },
+        onPageTransitionOut:       function(callback) {
+          this.fadeTo('fast', 0.0, callback);
+        },
+        onPageTransitionIn:        function() {
+          var prevPageLink = this.find('a.prev').css('visibility', 'hidden');
+          var nextPageLink = this.find('a.next').css('visibility', 'hidden');
+          // show appropriate next / prev page links
+          if (this.displayedPage > 0)
+            prevPageLink.css('visibility', 'visible');
+          var lastPage = this.getNumPages() - 1;
+          if (this.displayedPage < lastPage)
+            nextPageLink.css('visibility', 'visible');
+          this.fadeTo('fast', 1.0);
+        }
+      });
+      // event handlers for custom next / prev page links
+      gallery.find('a.prev').click(function(e) {
+        gallery.previousPage();
+        e.preventDefault();
+      });
+      gallery.find('a.next').click(function(e) {
+        gallery.nextPage();
+        e.preventDefault();
+      });
+    });
+  </script>
+  
+</body>
+</html>

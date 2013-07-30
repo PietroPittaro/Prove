@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Torino Friends</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">Torino<span class="logo_colour"> Friends</span></a></h1>
+          <h2>Il social network della città di Torino.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">Principale</a></li>
+            <li><a href="#">Eventi</a>
+              <ul>
+                <li><a href="nuovo.html">Crea nuovo</a></li>
+                <li><a href="eventi.html">Lista eventi</a>
+              </ul>
+            </li>
+            <li><a href="info.html">Informazioni</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <h3>Ultime novità</h3>
+          <h4>Pietro si è iscritto oggi.</h4>
+          <h5>Lunedì 8 luglio 2013</h5>
+          <p>Vai alla pagina di Pietro e leggi le sue pubblicazioni. <a href="#">Leggi tutto...</a></p>
+        </div>
+        <div class="sidebar">
+          <h3>Link utili</h3>
+          <ul>
+            <li><a href="http://www.ilportaledellautomobilista.it/">Il portale dell'automobilista</a></li>
+            <li><a href="http://www.youtube.com/?gl=IT&tab=w1">YouTube</a></li>
+            <li><a href="https://it-it.facebook.com/">Facebook</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="sidebar">
+          <h3>Concerti di luglio</h3>
+          <ul>
+            <li><a href="poster/Metallica.jpg">Metallica 14 h.21</a></li>
+            <li><a href="poster/Pearl Jam.jpg">Pearl Jam 18 h.21</a></li>
+            <li><a href="poster/Ramones.jpg">Ramones 21 h.21</a></li>
+            <li><a href="poster/Velvet Underground.jpg">Velvet Underground 24 h.21</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Benvenuto in Torino Friends</h1>
+        
+        <p><a>Torino Friends</a> fornisce a tutti i suoi iscritti una pagina personale, uno spazio creativo per esprimere le proprie idee e stringere nuove amicizie. E' possibile accedere a questo sito previa una registrazione gratuita durante la quale verrano richiesti alcuni dati personali. Si ricorda che <strong>è assolutamente vietato</strong> pubblicare contenuti osceni e contrari al buon costume: i trasgressori vedranno chiuso definitivamente il proprio account Torino Friends.</p> 
+        <p>Per ulteriori informazioni consultare questo <a href="http://elite.polito.it/teaching-mainmenu-69/laurea-specialistica-mainmenu-83/138-02npypd">sito</a>.</p>
+        <p>Questo social network è stato critto interamente in <strong>Ruby</strong>, <strong>HTML5</strong> e <strong>CSS3</strong>.</p>
+		<p>Torino Friends augura ai suoi iscritti un <strong><a href="http://www.youtube.com/watch?v=F8EQaPo4KHQ"> buon divertimento</a></strong>.</p>
+        <h2>Compatibilità con i browser</h2>
+        <p>Torino Friends può essere usato con i seguenti browser:</p>
+        <ul>
+          <li>Internet Explorer 7 e successivi</li>
+          <li>FireFox 10 e successivi</li>
+          <li>Google Chrome 17 e successivi</li>
+          <li>Safari 4 e successivi</li>
+        </ul>
+      </div>
+    </div>
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images2/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Principale</a> | <a href="nuovo.html">Nuovo evento</a> | <a href="eventi.html">Lista eventi</a> | <a href="info.html">Informazioni</a></p>
+      <p>Creato da Ian Borrelli &copy; 2013</p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>

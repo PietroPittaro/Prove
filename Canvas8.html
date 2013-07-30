@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="application/javascript">
+function draw() {
+var ctx = document.getElementById('canvas').getContext('2d');
+var img = new Image();
+img.src = "images/festa2.jpg";
+var img2 = new Image();
+img2.src = "images/3.png";
+img2.onload = function(){
+ctx.drawImage(img,0,0,300,200);
+ctx.drawImage(img2,10,10,20,20);
+ctx.strokeStyle = "rgb(255,255,255)";
+
+ctx.lineWidth = "3";
+ctx.strokeRect (110, 110, 50, 50);
+ctx.strokeRect (170, 110, 50, 50);
+ctx.strokeRect (230, 110, 50, 50);
+ctx.strokeRect (300, 110, 50, 50);
+
+ctx.strokeStyle = "rgb(0,0,0)";
+
+ctx.lineWidth = "3";
+ctx.strokeRect (110+3, 110+3, 44, 44);
+ctx.strokeRect (170+3, 110+3, 44, 44);
+ctx.strokeRect (230+3, 110+3, 44, 44);
+ctx.strokeRect (300+3, 110+3, 44, 44);
+
+
+}
+}
+</script>
+<style type="text/css">
+canvas { border: 3px solid black; }
+</style>
+</head>
+<body onload="draw();">
+pippo1
+<canvas id="canvas" width="1250" height="350">
+</canvas>
+pippo2
+</body>
+</html>

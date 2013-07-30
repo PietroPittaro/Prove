@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Torino Friends</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <header>
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">Torino<span class="logo_colour"> Friends</span></a></h1>
+          <h2>Il social network della città di Torino.</h2>
+        </div>
+      </div>
+      <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">Principale</a></li>
+            <li><a href="#">Eventi</a>
+              <ul>
+                <li><a href="nuovo.html">Crea nuovo</a></li>
+                <li><a href="eventi.html">Lista eventi</a>
+              </ul>
+            </li>
+            <li><a href="info.html">Informazioni</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+	<div id="site_content">
+	<h1><a href="#">Ian<span class="logo_colour"> Borrelli</span></a></h1>
+
+        <p><a>Ian</a> nasce in Campania in una tendopoli allestita per i terremotati dell’Irpinia.<br>
+		Venduto in tenera età per pochi spiccioli agli zingari, <a>Ian</a> viene barattato da questi ultimi al mercatino delle
+		pulci di Asti con un paio di scarpe e una confezione di gallette. Successivamente contrabbandato nella
+		periferia nord di Torino, <a>Ian</a>  viene preso in carico dalla padrona di un circo che accortasi del suo potenziale
+		comico lo esibisce come attrazione.<br>
+		Inizialmente dotato di una scarsa alfabetizzazione, <a>Ian</a> si auto-impartisce un’istruzione raffazzonata e
+		lacunosa conseguendo all’età di 21 anni (e non senza difficoltà) la licenza elementare.<br>
+		Negli anni <a>Ian</a> si guadagna da vivere arrangiandosi con i più svariati mestieri: tronista in un ospizio, prefico
+		ai funerali, annusatore di ascelle per una famosa marca di deodoranti, velino, lucidatore di teste per calvi,
+		insegnante di italiano per politici italiani, conducente di risciò, palo della luce.<br>
+		Viene poi assunto da un’importante casa automobilistica della città come collaudatore di prototipi sebbene
+		privo di patente di guida ma da questa viene allontanato in malo modo per aver distrutto un considerevole
+		numero di vetture.<br>
+		Entra poi con passo incerto in una azienda di biotecnologie con mansioni di portinaio e addetto al collegamento dei cavi ma anche da qui viene cacciato con l’accusa 
+		di aver sorriso alla frase del suo amministratore delegato: <i>“l’anno prossimo raddoppieremo il fatturato”</i>.<br>
+		Da questo momento in avanti, seguendo una sua naturale vocazione, <a>Ian</a> inizia un duro lavoro come attore
+		presso l’agenzia <i>Diva Futura</i> interpretando indimenticabili pellicole d’autore con il nome d’arte de <i>“Il Grande Matranga”</i>. <br>
+		Recentemente eletto alla Camera dei Deputati nelle fila del <i>Partito dell’Amore</i> vive nella consapevolezza che per fare carriera sia davvero necessario preservarsi ignoranti.
+		</p>
+	</div>
+	
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images2/top.png" alt="top" /></a>
+    </div>
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Principale</a> | <a href="nuovo.html">Nuovo evento</a> | <a href="eventi.html">Lista eventi</a> | <a href="info.html">Informazioni</a></p>
+      <p>Creato da Ian Borrelli &copy; 2013</p>
+    </footer>
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+</body>
+</html>
