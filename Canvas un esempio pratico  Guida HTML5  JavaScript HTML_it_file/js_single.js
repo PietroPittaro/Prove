@@ -1,0 +1,1 @@
+$(document).ready( function(){ var text_class = ""; text_class = $(".crunch-item").find("li a").attr("class"); $('.article-sidebar-title').attr("class", "article-sidebar-title "+text_class); $('.pageviews').attr("class", "pageviews "+ text_class);} );

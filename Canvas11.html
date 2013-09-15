@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html> 
+<head>  
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">  
+<title>Example 1</title>  
+<style>    
+html {      -ms-touch-action: double-tap-zoom;      }      
+</style>
+</head> 
+<body>  
+<canvas id="drawSurface" width="500" height="500" style="border: 1px black dashed;">
+</canvas>  
+<script>    
+var _canvas = document.getElementById("drawSurface");    
+var _context = _canvas.getContext("2d"); 
+var img2 = new Image();
+img2.src = "images/3.jpg";
+        
+_context.fillStyle = "rgba(255, 0, 0, 0.5)";         
+_canvas.addEventListener('mousemove', paintCanvas, false);
+
+
+function paintCanvas(evt) 
+{
+      _context.fillRect(evt.clientX, evt.clientY, 5, 5);
+	  _context.drawImage(img2,evt.clientX, evt.clientY,50,50);
+	  }  
+</script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+@media screen {
+html, body {
+	background-image:none;
+	background-color:white;
+}
+.footerwrap {
+	border-top: 1px dotted #000;
+}
+}
+
+@media screen and (max-width: 768px) {
+.footerwrap {
+	display:none;
+}
+}

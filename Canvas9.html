@@ -1,7 +1,11 @@
 <html>
 <head>
+<script src="modernizr.js"></script>
 <script type="application/javascript">
+
 function draw() {
+var mouseX;
+var mouseY;
 var ctx = document.getElementById('canvas').getContext('2d');
 var img = new Image();
 img.src = "images/festa2.jpg";
@@ -44,10 +48,25 @@ ctx.fillText (i.toString(),230+20, 110+40);
 i=i+1;
 ctx.fillText (i.toString(),300+20, 110+40);
 
+window.addEventListener("mousemove", onMouseMove, false);
+window.addEventListener("click", onMouseClick, false);
 
 }
+
+function onMouseMove(e) {
+mouseX = e.clientX-ctx.offsetLeft;
+mouseY = e.clientY-ctx.offsetTop;
 }
+
+function onMouseClick(e) {
+ctx.putImageData(img2,mouseX,mouseY);
+}
+}
+
 </script>
+</head>
+<body>
+
 <style type="text/css">
 canvas { border: 3px solid black; }
 </style>

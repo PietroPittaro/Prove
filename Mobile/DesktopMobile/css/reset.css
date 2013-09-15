@@ -1,0 +1,44 @@
+@media all  {
+
+/*  reset */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, em, img, strong, sub, sup, ol, ul, li,form, label, tr, th, td, embed, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: 'Eagle';
+    src: url('eagle-webfont.eot');
+    src: url('eagle-webfont.eot?#iefix') format('embedded-opentype'),
+         url('eagle-webfont.svg#eagleregular') format('svg'),
+         url('eagle-webfont.woff') format('woff'),
+         url('eagle-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+}

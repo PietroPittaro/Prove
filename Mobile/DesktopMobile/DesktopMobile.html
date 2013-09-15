@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!--
+Pietro Pittaro esempio di ridimensionamento del menù per dispositivi mobile
+-->
+<head>
+	<title>Ridimensionamento del menù per mobile</title>
+
+		<!--Generale-->
+		<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Language" content="it" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">    
+
+		<!--CSS per layout fluido-->
+		<link href="css/default.css" rel="stylesheet" type="text/css" />
+
+
+		<!--Scipt per il menu a scomparsa -->
+		<script src="js/SpryCollapsiblePanel.js" type="text/javascript"></script>
+
+		<!--CSS per il menu a scomparsa -->
+		<link href="css/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+
+		<!--Script per lo slider-->
+	
+    	<!--Libreria javascript esterna (jquery)-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    	<!--Script dello slider-->
+		<script type="text/javascript" src="js/mobilyslider.js"></script>
+    	<!--Script per configurare lo slider-->
+		<script type="text/javascript" src="js/init.js"></script>
+</head>
+
+<body>
+
+<!--Menu per finestra più larga di 768px-->
+
+    <div class="menuwrap">
+        	<div class="menusx">
+                <a href="">PRINCIPALE</a>
+                <a href="">INFORMAZIONI</a>
+            </div>
+            
+       		<div class="menudx">
+                <a href="">LAVORA CON NOI</a>
+                <a href="">CONTATTI</a>
+            </div>
+			
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<br><br>
+			<center><img src="img/Principale.png"></center>
+    </div>  
+
+
+<!--Menu per finestra larga max 768px-->
+
+	<div id="CollapsiblePanel1" class="CollapsiblePanel">
+		<div class="CollapsiblePanelTab" tabindex="0">
+			<p><img class="widepic" src="img/colorificio-borrelli.png"></p>
+		</div>
+		<br>
+		<div class="CollapsiblePanelContent">
+                <p><a href="">PRINCIPALE</a></p>
+                <p><a href="">INFORMAZIONI</a></p>
+                <p><a href="">LAVORA CON NOI</a></p>
+                <p><a href="">CONTATTI</a></p>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,1246 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.html.it/pag/19304/canvas-un-esempio-pratico/ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
+lang="it-IT" xmlns="http://www.w3.org/1999/xhtml"><HEAD profile="http://gmpg.org/xfn/11">
+<META content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<META content="IE=edge" http-equiv="X-UA-Compatible"><!-- <meta http-equiv="pragma" content="no-cache" />  --><!-- mobile metas -->
+<META name="viewport" content="width=device-width, initial-scale=1.0">
+<META name="HandheldFriendly" content="True">
+<META name="MobileOptimized" content="320">
+<META content="on" http-equiv="cleartype"><!-- IE9+ pinned sites -->
+<META name="application-name" content="HTML.it">
+<META name="msapplication-tooltip" content="HTML.it">
+<META name="msapplication-starturl" content="http://www.html.it"><!-- Icons --><!-- touch 
+  https://github.com/h5bp/mobile-boilerplate/blob/v4.1.0/index.html#l-13-17 --><LINK 
+rel="apple-touch-icon-precomposed" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/apple-touch-icon-144x144-precomposed.png" 
+sizes="144x144"><LINK rel="apple-touch-icon-precomposed" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/apple-touch-icon-114x114-precomposed.png" 
+sizes="114x114"><LINK rel="apple-touch-icon-precomposed" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/apple-touch-icon-72x72-precomposed.png" 
+sizes="72x72"><LINK rel="apple-touch-icon-precomposed" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/apple-touch-icon-57x57-precomposed.png"><LINK 
+rel="shortcut icon" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/apple-touch-icon.png"><!-- 57x57 --><!-- standard favicon 32x32 --><LINK 
+rel="shortcut icon" href="http://www.html.it/wp-content/themes/www.html.it/images/icons/favicon.ico"><!-- tile icon for Win8 (144x144 + tile color) 
+  http://blogs.msdn.com/b/ie/archive/2012/06/08/high-quality-visuals-for-pinned-sites-in-windows-8.aspx -->
+<META name="msapplication-TileImage" content="http://www.html.it/wp-content/themes/www.html.it/images/icons/win8-tile-image-144x144.png">
+<META name="msapplication-TileColor" content="rgb(190,204,209)"><TITLE>Canvas: 
+un esempio pratico | Guida HTML5 | JavaScript HTML.it</TITLE><LINK rel="canonical" 
+href="http://www.html.it/pag/19304/canvas-un-esempio-pratico/">
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jsapi.js"></SCRIPT>
+
+<SCRIPT type="text/javascript"> 
+            google.load('search', '1', {language : 'it'});
+            google.setOnLoadCallback(function() {
+              var customSearchOptions = {};
+              customSearchOptions['adoptions'] = {'layout': 'noTop'};
+              var customSearchControl = new google.search.CustomSearchControl(
+                '013528968507973011445:8idtfkg3vtw', customSearchOptions);
+              customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+              var options = new google.search.DrawOptions(); 
+              options.setAutoComplete(true);
+              options.enableSearchboxOnly("http://www.html.it/page/risultati-della-ricerca/", "search");
+              customSearchControl.draw('cse-search-form', options);
+              customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF); //http://productforums.google.com/forum/#!topic/customsearch/saonoBcs4lE
+            }, true);
+          </SCRIPT>
+<!-- CSS --><LINK rel="stylesheet" type="text/css" href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/font-awesome.min.css"><LINK 
+rel="stylesheet" type="text/css" href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/main.css.css"><!-- RSS AUTODISCOVER --><LINK 
+title="Tutte le novità" rel="alternate" type="application/rss+xml" href="http://rss.html.it/alldaily.xml"><LINK 
+title="Tutti gli articoli" rel="alternate" type="application/rss+xml" href="http://rss.html.it/articoli.xml"><LINK 
+title="Tutte le guide" rel="alternate" type="application/rss+xml" href="http://rss.html.it/guide.xml"><LINK 
+title="Tutti i software" rel="alternate" type="application/rss+xml" href="http://rss.html.it/download.xml"><LINK 
+title="Tutti gli script" rel="alternate" type="application/rss+xml" href="http://rss.html.it/script.xml"><LINK 
+title="Audio e Movie Flash" rel="alternate" type="application/rss+xml" href="http://rss.html.it/movie_audio.xml"><LINK 
+title="Il Blog di HTML.it" rel="alternate" type="application/rss+xml" href="http://blog.html.it/index_desc.xml"><!-- RSS AUTODISCOVER -->
+<SCRIPT type="text/javascript">var _ajaxurl_ = 'http://www.html.it/wp-admin/admin-ajax.php';</SCRIPT>
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.1 - http://yoast.com/wordpress/seo/ -->
+<META name="description" content="Canvas in HTML 5: un esempio pratico di implementazione dell’elemento secondo le specifiche della nuova versione."><!-- / Yoast WordPress SEO plugin. --><LINK 
+id="wordpress-popular-posts-css" rel="stylesheet" type="text/css" href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/wpp.css" 
+media="all"><LINK id="contact-form-7-css" rel="stylesheet" type="text/css" href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/styles.css" 
+media="all"><LINK id="wp-postratings-css" rel="stylesheet" type="text/css" href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/postratings-css.css" 
+media="all"><LINK id="easy-fancybox.css-css" rel="stylesheet" type="text/css" 
+href="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/easy-fancybox.css.css" 
+media="screen">
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/js_content.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.formalize.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.hoverIntent.minified.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/js_single.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/waypoints.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/comment-reply.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/newsletter.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.fancybox-1.3.4.pack.js"></SCRIPT>
+
+<META name="framework" content="Alkivia Framework 0.8">
+<STYLE type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</STYLE>
+<!-- Wordpress Popular Posts v2.3.2 -->
+<SCRIPT type="text/javascript">
+    /* <![CDATA[ */				
+	jQuery.post('http://www.html.it/wp-admin/admin-ajax.php', {action: 'wpp_update', token: '81221d7148', id: 19304}, function(data){/*alert(data);*/});
+    /* ]]> */
+</SCRIPT>
+<!-- End Wordpress Popular Posts v2.3.2 -->
+<META id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.5"><!-- Easy FancyBox 1.3.4.9 using FancyBox 1.3.4 - RavanH (http://4visions.nl/en/wordpress-plugins/easy-fancybox/) -->
+<SCRIPT type="text/javascript">
+/* <![CDATA[ */
+jQuery(document).ready(function($){
+var fb_timeout = null;
+var fb_opts = { 'overlayShow' : true, 'centerOnScroll' : true, 'showCloseButton' : true, 'showNavArrows' : true, 'onCleanup' : function() { if(fb_timeout) { window.clearTimeout(fb_timeout); fb_timeout = null; } } };
+/* IMG */
+var fb_IMG_select = 'a[href$=".jpg"]:not(.nofancybox),a[href$=".JPG"]:not(.nofancybox),a[href$=".gif"]:not(.nofancybox),a[href$=".GIF"]:not(.nofancybox),a[href$=".png"]:not(.nofancybox),a[href$=".PNG"]:not(.nofancybox)';
+$(fb_IMG_select).addClass('fancybox').attr('rel', 'gallery');
+$('a.fancybox, area.fancybox').fancybox( $.extend({}, fb_opts, { 'transitionIn' : 'elastic', 'easingIn' : 'easeOutBack', 'transitionOut' : 'elastic', 'easingOut' : 'easeInBack', 'opacity' : false, 'titleShow' : true, 'titlePosition' : 'over', 'titleFromAlt' : true }) );
+/* Auto-click */ 
+$('#fancybox-auto').trigger('click');
+});
+/* ]]> */
+</SCRIPT>
+
+<STYLE type="text/css">.fancybox-hidden{display:none}</STYLE>
+<!-- SCRIPT TAG -->
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.extend.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/swfobject-2.2.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/common.js"></SCRIPT>
+<!-- END SCRIPT TAG --><!-- Google Analytics -->
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/ga-addon.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-272662-1'],['_setDomainName', '.html.it']);
+		_gaq.push(['_trackPageview', '/xk/design/xhtml/guide/guida-html5/43/19304/html5/50/paganotti/20110404/']);
+		_gaq.push(['_setCustomVar',1,'data','20110404', 3], ['_setCustomVar',2,'tipo','guide - xhtml', 3], ['_setCustomVar',3,'guide','Guida HTML5', 3]);		
+		_gaq.push(['_trackPageview']);
+		
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = 'http://www.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</SCRIPT>
+<!-- Google Analytics --><!-- Responsive -->
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/responsive.js"></SCRIPT>
+<!-- Adform Tracking Code BEGIN --><!-- Point: "Html.it  - Sito editoriale (Landing Page)" -->
+<SCRIPT type="text/javascript">
+var _adftrack = {
+    pm: 109481,
+    id: 2145451
+};
+(function(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://track.adform.net/serving/scripts/trackpoint/async/';var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);})();
+</SCRIPT>
+<NOSCRIPT>    &lt;p style="margin:0;padding:0;border:0;"&gt;        &lt;img 
+src="https://track.adform.net/Serving/TrackPoint/?pm=109481&amp;lid=2145451" 
+width="1" height="1" alt="" /&gt;    &lt;/p&gt;</NOSCRIPT><!-- Adform Tracking Code END -->
+<META name="GENERATOR" content="MSHTML 9.00.8112.16476"></HEAD>
+<BODY class="single single-pag postid-19304 single-format-standard"><!--[if IE 7]> <div id="wrap" class="lt-ie9 ie7"> <![endif]--><!--[if IE 8]> <div id="wrap" class="lt-ie9 ie8"> <![endif]--><!--[if gt IE 8]><!--> 
+
+<DIV id="wrap"> <!--<![endif]-->
+<DIV id="header"><A class="logo-item" title="HTML.it" 
+href="http://www.html.it/"><IMG alt="HTML.it – il sito italiano del web publishing" 
+src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/logo.png" 
+width="242" height="51"></A>
+<DIV class="search-item">
+<DIV id="cse-search-form"></DIV></DIV>
+<DIV id="main-nav">
+<UL class="main-nav-item">
+  <LI><A class="stroke-item hp-item" title="Home" 
+  href="http://www.html.it/">Home<SPAN></SPAN></A></LI>
+  <LI id="1"><A class="stroke-item border-nav-item dev-item" href="http://www.html.it/development/">Development<SPAN></SPAN></A>
+  <DIV style="display: none;" class="dropdown-item dev-item">
+  <DIV id="primary_item_1" class="primary-item dev-text-item">
+  <UL>
+    <LI id="item-1" class="select" name="dev-item"><A href="http://www.html.it/javascript/">JavaScript<SPAN></SPAN></A></LI>
+    <LI id="item-2" name="dev-item"><A 
+    href="http://www.html.it/mobile/">Mobile<SPAN></SPAN></A></LI>
+    <LI id="item-3" name="dev-item"><A 
+    href="http://www.html.it/programmazione/">Programmazione<SPAN></SPAN></A></LI>
+    <LI id="item-4" name="dev-item"><A 
+    href="http://www.html.it/php/">PHP<SPAN></SPAN></A></LI>
+    <LI id="item-5" name="dev-item"><A 
+    href="http://www.html.it/java/">Java<SPAN></SPAN></A></LI>
+    <LI id="item-6" name="dev-item"><A 
+    href="http://www.html.it/net/">.NET<SPAN></SPAN></A></LI>
+    <LI id="item-7" name="dev-item"><A 
+    href="http://www.html.it/cms/">CMS<SPAN></SPAN></A></LI>
+    <LI id="item-8" name="dev-item"><A 
+    href="http://www.html.it/ruby/">Ruby<SPAN></SPAN></A></LI>
+    <LI id="item-9" name="dev-item"><A 
+    href="http://www.html.it/flash/">Flash<SPAN></SPAN></A></LI>
+    <LI id="item-10" name="dev-item"><A 
+    href="http://www.html.it/xml/">XML<SPAN></SPAN></A></LI>
+    <LI id="item-11" name="dev-item"><A 
+    href="http://www.html.it/basic/">Basic<SPAN></SPAN></A></LI>
+    <LI id="item-12" name="dev-item"><A 
+    href="http://www.html.it/asp/">ASP<SPAN></SPAN></A></LI></UL>
+  <DIV id="dev-item-box" class="secondary-item">
+  <UL class="subitem-1">
+    <LI><A href="http://www.html.it/articoli/usare-canvas-svg-e-il-multitouch-per-creare-un-semplice-gioco/?cref=development">Usare 
+    Canvas, SVG e il multitouch per creare un semplice gioco</A></LI>
+    <LI><A href="http://www.html.it/articoli/pointer-events-specifica-w3c-e-principi-di-funzionamento/?cref=development">Pointer 
+    Events, specifica W3C e principi di funzionamento</A></LI>
+    <LI><A href="http://www.html.it/articoli/gestire-input-multi-touch-e-mouse-in-tutti-i-browser-mobile/?cref=development">Gestire 
+    input multi-touch e mouse in tutti i browser mobile</A></LI>
+    <LI><A href="http://www.html.it/articoli/vanilla-js-lalternativa-a-jquery/?cref=development">Vanilla 
+    JS: l'alternativa a jQuery</A></LI>
+    <LI><A href="http://www.html.it/articoli/require-js-gestire-moduli-e-dipendenze-in-javascript/?cref=development">Require.js, 
+    gestire moduli e dipendenze in JavaScript</A></LI></UL></DIV>
+  <DIV class="clear1"></DIV></DIV>
+  <DIV class="dropdown-shadow"></DIV></DIV></LI>
+  <LI id="2" class="selected"><A class="stroke-item border-nav-item design-item" 
+  href="http://www.html.it/design/">Design<SPAN></SPAN></A>
+  <DIV style="display: none;" class="dropdown-item design-item">
+  <DIV id="primary_item_2" class="primary-item design-text-item">
+  <UL>
+    <LI id="item-13" class="select" name="design-item"><A href="http://www.html.it/xhtml/">XHTML<SPAN></SPAN></A></LI>
+    <LI id="item-14" name="design-item"><A 
+    href="http://www.html.it/css/">CSS<SPAN></SPAN></A></LI>
+    <LI id="item-15" name="design-item"><A 
+    href="http://www.html.it/grafica/">Grafica<SPAN></SPAN></A></LI>
+    <LI id="item-16" name="design-item"><A 
+    href="http://www.html.it/web-design/">Web Design<SPAN></SPAN></A></LI>
+    <LI id="item-17" name="design-item"><A href="http://www.html.it/webmarketing/">Web 
+    Marketing<SPAN></SPAN></A></LI>
+    <LI id="item-18" name="design-item"><A 
+    href="http://www.html.it/editor/">Editor<SPAN></SPAN></A></LI></UL>
+  <DIV id="design-item-box" class="secondary-item">
+  <UL class="subitem-13">
+    <LI><A href="http://www.html.it/guide/guida-html5/?cref=design">Guida 
+    HTML5</A></LI>
+    <LI><A href="http://www.html.it/guide/guida-xhtml/?cref=design">Guida 
+    XHTML</A></LI>
+    <LI><A href="http://www.html.it/guide/guida-html/?cref=design">Guida 
+    HTML</A></LI></UL></DIV>
+  <DIV class="clear1"></DIV></DIV>
+  <DIV class="dropdown-shadow"></DIV></DIV></LI>
+  <LI id="3"><A class="stroke-item border-nav-item system-item" href="http://www.html.it/system/">System<SPAN></SPAN></A>
+  <DIV style="display: none;" class="dropdown-item system-item">
+  <DIV id="primary_item_3" class="primary-item system-text-item">
+  <UL>
+    <LI id="item-19" class="select" name="system-item"><A href="http://www.html.it/sicurezza/">Sicurezza<SPAN></SPAN></A></LI>
+    <LI id="item-20" name="system-item"><A 
+    href="http://www.html.it/server/">Server<SPAN></SPAN></A></LI>
+    <LI id="item-21" name="system-item"><A href="http://www.html.it/applicazioni-web/">Applicazioni 
+    Web<SPAN></SPAN></A></LI>
+    <LI id="item-22" name="system-item"><A 
+    href="http://www.html.it/database/">Database<SPAN></SPAN></A></LI>
+    <LI id="item-23" name="system-item"><A 
+    href="http://www.html.it/linux/">Linux<SPAN></SPAN></A></LI></UL>
+  <DIV id="system-item-box" class="secondary-item">
+  <UL class="subitem-19">
+    <LI><A href="http://www.html.it/articoli/alternative-sicure-a-gmail/?cref=system">Webmail 
+    sicure: le migliori</A></LI>
+    <LI><A href="http://www.html.it/articoli/creare-un-finto-access-poin-wifi/?cref=system">Creare 
+    un finto access point WiFi</A></LI>
+    <LI><A href="http://www.html.it/articoli/brute-force-su-ssh-proteggersi-con-fail2ban/?cref=system">Brute 
+    force su SSH: proteggersi con Fail2ban</A></LI>
+    <LI><A href="http://www.html.it/articoli/attacco-brute-force-di-un-form-con-hydra-2/?cref=system">Attacco 
+    brute force di un form con Hydra</A></LI>
+    <LI><A href="http://www.html.it/articoli/cookie-cadger-hijacking-di-una-sessione-in-un-click/?cref=system">Cookie 
+    Cadger: hijacking di una sessione in un click</A></LI></UL></DIV>
+  <DIV class="clear1"></DIV></DIV>
+  <DIV class="dropdown-shadow"></DIV></DIV></LI></UL>
+<UL class="side-nav-item">
+  <LI><A class="stroke-item download-item" title="Download" href="http://download.html.it/">Download</A></LI>
+  <LI><A class="stroke-item border-nav-item video-item" title="Video" href="http://video.html.it/">Video</A></LI>
+  <LI><A class="stroke-item border-nav-item corsi-item" title="Corsi" href="http://corsi.html.it/">Corsi</A></LI>
+  <LI><A class="stroke-item forum-item" title="Forum" href="http://forum.html.it/">Forum</A></LI></UL></DIV>
+<DIV style="display: none;" class="temp-items">
+<UL class="subitem-1">
+  <LI><A href="http://www.html.it/articoli/usare-canvas-svg-e-il-multitouch-per-creare-un-semplice-gioco/?cref=development">Usare 
+  Canvas, SVG e il multitouch per creare un semplice gioco</A></LI>
+  <LI><A href="http://www.html.it/articoli/pointer-events-specifica-w3c-e-principi-di-funzionamento/?cref=development">Pointer 
+  Events, specifica W3C e principi di funzionamento</A></LI>
+  <LI><A href="http://www.html.it/articoli/gestire-input-multi-touch-e-mouse-in-tutti-i-browser-mobile/?cref=development">Gestire 
+  input multi-touch e mouse in tutti i browser mobile</A></LI>
+  <LI><A href="http://www.html.it/articoli/vanilla-js-lalternativa-a-jquery/?cref=development">Vanilla 
+  JS: l'alternativa a jQuery</A></LI>
+  <LI><A href="http://www.html.it/articoli/require-js-gestire-moduli-e-dipendenze-in-javascript/?cref=development">Require.js, 
+  gestire moduli e dipendenze in JavaScript</A></LI></UL>
+<UL class="subitem-2">
+  <LI><A href="http://www.html.it/guide/windows-phone-75-guida-alla-creazione-di-applicazioni/?cref=development">Windows 
+  Phone 7.5, guida alla creazione di applicazioni</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-android/?cref=development">Guida 
+  Android</A></LI>
+  <LI><A href="http://www.html.it/guide/creare-applicazioni-iphone-e-ipad-guida-ios1/?cref=development">Creare 
+  applicazioni iPhone e iPad: guida iOS</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-foundation/?cref=development">Guida 
+  Foundation </A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-apache-cordova/?cref=development">Guida 
+  Apache Cordova</A></LI></UL>
+<UL class="subitem-3">
+  <LI><A href="http://www.html.it/guide/guida-c/?cref=development">Guida 
+  C</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-c2/?cref=development">Guida 
+  C++</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-programmazione-orientata-agli-oggetti/?cref=development">Guida 
+  programmazione orientata agli oggetti</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-objective-c/?cref=development">Guida 
+  Objective C</A></LI>
+  <LI><A href="http://www.html.it/guide/solid-guida-ai-principi-basilari-delloop/?cref=development">SOLID 
+  - Guida ai principi basilari dell'OOP</A></LI></UL>
+<UL class="subitem-4">
+  <LI><A href="http://www.html.it/articoli/installare-wordpress-sulla-cloud-platform-di-google/?cref=development">Installare 
+  Wordpress sulla Cloud Platform di Google</A></LI>
+  <LI><A href="http://www.html.it/articoli/utilizzo-della-dependency-injection-in-php/?cref=development">Utilizzo 
+  della Dependency Injection in PHP</A></LI>
+  <LI><A href="http://www.html.it/articoli/alla-scoperta-di-laravel-4/?cref=development">Alla 
+  scoperta di Laravel 4</A></LI>
+  <LI><A href="http://www.html.it/articoli/web-service-soap-e-php-5/?cref=development">Web 
+  Service, SOAP e PHP 5</A></LI>
+  <LI><A href="http://www.html.it/articoli/lapi-per-il-password-hashing-di-php-5-5/?cref=development">L’API 
+  per il password hashing di PHP 5.5</A></LI></UL>
+<UL class="subitem-5">
+  <LI><A href="http://www.html.it/articoli/integrazione-con-apache-camel/?cref=development">Integrazione 
+  con Apache Camel</A></LI>
+  <LI><A href="http://www.html.it/articoli/jpa-2-e-la-persistenza-in-java-1/?cref=development">JPA 
+  2 e la persistenza in Java</A></LI>
+  <LI><A href="http://www.html.it/articoli/wicket-programmazione-web-component-oriented-10/?cref=development">Java 
+  Web: Introduzione ad Apache Wicket</A></LI>
+  <LI><A href="http://www.html.it/articoli/scala-in-ascesa-ditemi-che-opzioni-mi-restano-2/?cref=development">Scala 
+  in ascesa: che Opzioni ci restano?</A></LI>
+  <LI><A href="http://www.html.it/articoli/git-in-pochi-passi-2/?cref=development">GIT 
+  in pochi passi</A></LI></UL>
+<UL class="subitem-6">
+  <LI><A href="http://www.html.it/guide/creare-app-ios-con-azure-mobile-services/?cref=development">Creare 
+  app iOS con Azure Mobile Services</A></LI>
+  <LI><A href="http://www.html.it/guide/creare-videogames-per-windows-rt-con-mmgamelibrary2d/?cref=development">Videogames 
+  per Windows RT con MMGameLibrary2D</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-windows-8-rt/?cref=development">Creare 
+  app per Windows 8 e Windows RT, la guida</A></LI>
+  <LI><A href="http://www.html.it/guide/crea-una-app-windows-8-rt-in-5-passi/?cref=development">Crea 
+  una App Windows RT in 5 passi</A></LI>
+  <LI><A href="http://www.html.it/guide/lab-windows-8-creare-app-windows-store-app-con-javascript-e-html/?cref=development">Windows 
+  8 Lab: creare app Windows Store con JavaScript e HTML</A></LI></UL>
+<UL class="subitem-7">
+  <LI><A href="http://www.html.it/articoli/strumenti-per-migliorare-i-menu-di-navigazione-in-joomla/?cref=development">Strumenti 
+  per migliorare i menu di navigazione in Joomla</A></LI>
+  <LI><A href="http://www.html.it/articoli/installare-wordpress-sulla-cloud-platform-di-google/?cref=development">Installare 
+  Wordpress sulla Cloud Platform di Google</A></LI>
+  <LI><A href="http://www.html.it/articoli/introduzione-alla-programmazione-object-oriented-in-wordpress/?cref=development">Introduzione 
+  alla programmazione Object-Oriented in WordPress</A></LI>
+  <LI><A href="http://www.html.it/articoli/google-analytics-e-wordpress-due-plugin-per-lanalisi-del-traffico/?cref=development">Google 
+  Analytics e Wordpress: due plugin per l'analisi del traffico</A></LI>
+  <LI><A href="http://www.html.it/articoli/due-componenti-per-la-gestione-delle-newsletter-in-joomla/?cref=development">Due 
+  componenti per la gestione delle newsletter in Joomla</A></LI></UL>
+<UL class="subitem-8">
+  <LI><A href="http://www.html.it/articoli/webrtc-comunicazioni-real-time-per-il-web/?cref=development">WebRTC: 
+  Comunicazioni Real Time per il Web</A></LI>
+  <LI><A href="http://www.html.it/articoli/duck-typing-tipizzazione-per-comportamenti-1/?cref=development">Duck 
+  Typing, tipizzazione per comportamenti</A></LI>
+  <LI><A href="http://www.html.it/articoli/introduzione-a-rack-1/?cref=development">Introduzione 
+  a Rack</A></LI>
+  <LI><A href="http://www.html.it/articoli/le-meravigliose-novit-di-rails-3-1/?cref=development">Le 
+  meravigliose novità di Rails 3</A></LI>
+  <LI><A href="http://www.html.it/articoli/couchdb-e-rails-la-gemma-sul-divano-1/?cref=development">CouchDB 
+  e Rails: la gemma sul divano</A></LI></UL>
+<UL class="subitem-9">
+  <LI><A href="http://www.html.it/articoli/un-progetto-flexphp-con-flash-builder-3/?cref=development">Un 
+  progetto Flex/PHP con Flash Builder</A></LI>
+  <LI><A href="http://www.html.it/articoli/un-progetto-flexjava-ee-con-eclipse-1/?cref=development">Un 
+  progetto Flex/Java EE con Eclipse</A></LI>
+  <LI><A href="http://www.html.it/articoli/creare-leffetto-time-machine-di-leopard-in-actionscript-30-1/?cref=development">Creare 
+  l'effetto Time Machine di Leopard in Actionscript 3.0</A></LI>
+  <LI><A href="http://www.html.it/articoli/sviluppare-unapplicazione-per-iphone-con-flash-builder-1/?cref=development">Sviluppare 
+  un'applicazione per iPhone con Flash Builder</A></LI>
+  <LI><A href="http://www.html.it/articoli/sviluppare-interfacce-fluide-con-flash-builder-1/?cref=development">Sviluppare 
+  interfacce fluide con Flash Builder</A></LI></UL>
+<UL class="subitem-10">
+  <LI><A href="http://www.html.it/articoli/open-graph-protocol-facebook-e-il-web-semantico-1/?cref=development">Open 
+  Graph Protocol, Facebook e il Web Semantico</A></LI>
+  <LI><A href="http://www.html.it/articoli/introduzione-a-rdfa-2-1/?cref=development">RDFa, 
+  gli elementi</A></LI>
+  <LI><A href="http://www.html.it/articoli/introduzione-a-rdfa-1/?cref=development">Introduzione 
+  a RDFa</A></LI>
+  <LI><A href="http://www.html.it/articoli/usare-svg-per-creare-sfondi-flessibili-scalabili-e-divertenti-1/?cref=development">Usare 
+  SVG per creare sfondi flessibili, scalabili e divertenti</A></LI>
+  <LI><A href="http://www.html.it/articoli/visualizzare-i-metadati-rdf-dublin-core-con-le-trasformazioni-xsl-1/?cref=development">Visualizzare 
+  i metadati RDF Dublin core con le trasformazioni XSL</A></LI></UL>
+<UL class="subitem-11">
+  <LI><A href="http://www.html.it/guide/web-design-di-base-consigli-e-best-practices/?cref=development">Web 
+  design di base, consigli e best practices</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-css-di-base/?cref=development">Guida CSS 
+  di base</A></LI>
+  <LI><A href="http://www.html.it/guide/internet-explorer-10-punti-da-approfondire/?cref=development">Internet 
+  Explorer 10 punti da approfondire</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-actionscript-3-di-base/?cref=development">Guida 
+  ActionScript 3 di base</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-aspnet-starter-kit/?cref=development">Guida 
+  ASP.NET Starter Kit</A></LI></UL>
+<UL class="subitem-12">
+  <LI><A href="http://www.html.it/articoli/creazione-e-gestione-di-una-semplice-mailing-list-1/?cref=development">Creazione 
+  e gestione di una semplice mailing list</A></LI>
+  <LI><A href="http://www.html.it/articoli/mini-sistema-editoriale-con-asp-xml-xsl-1/?cref=development">Mini 
+  sistema editoriale con ASP / XML / XSL</A></LI>
+  <LI><A href="http://www.html.it/articoli/introduzione-e-gestione-di-array-1/?cref=development">Introduzione 
+  e gestione di array</A></LI>
+  <LI><A href="http://www.html.it/articoli/cursortype-e-locktype-1/?cref=development">CursorType 
+  e LockType</A></LI>
+  <LI><A href="http://www.html.it/articoli/il-file-adovbsinc-1/?cref=development">Il 
+  file adovbs.inc</A></LI></UL>
+<UL class="subitem-13">
+  <LI><A href="http://www.html.it/guide/guida-html5/?cref=design">Guida 
+  HTML5</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-xhtml/?cref=design">Guida 
+  XHTML</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-html/?cref=design">Guida 
+  HTML</A></LI></UL>
+<UL class="subitem-14">
+  <LI><A href="http://www.html.it/guide/guida-css-tecniche-essenziali/?cref=design">Guida 
+  CSS Tecniche essenziali</A></LI>
+  <LI><A href="http://www.html.it/articoli/form-con-html5-i-nuovi-elementi-input/?cref=design">Form 
+  con HTML5: i nuovi elementi input</A></LI>
+  <LI><A href="http://www.html.it/articoli/sass-e-il-css-diventa-facile-da-mantenere/?cref=design">SASS, 
+  e il CSS diventa facile da mantenere</A></LI>
+  <LI><A href="http://www.html.it/articoli/architetture-css-ristrutturare-i-css-con-lapproccio-metacoax/?cref=design">Architetture 
+  CSS: Ristrutturare i CSS con l'approccio MetaCoax</A></LI>
+  <LI><A href="http://www.html.it/articoli/architetture-css-i-principali-approcci-scalabili-e-modulari/?cref=design">Architetture 
+  CSS: I principali approcci scalabili e modulari</A></LI></UL>
+<UL class="subitem-15">
+  <LI><A href="http://www.html.it/guide/guida-photoshop-cs5/?cref=design">Guida 
+  Photoshop CS5</A></LI>
+  <LI><A href="http://www.html.it/articoli/creare-sticker-di-facebook-con-photoshop/?cref=design">Creare 
+  sticker di Facebook con Photoshop</A></LI>
+  <LI><A href="http://www.html.it/articoli/icone-ios-7-con-photoshop/?cref=design">Icone 
+  iOS 7 con Photoshop</A></LI>
+  <LI><A href="http://www.html.it/articoli/decorazioni-anni-80-con-photoshop/?cref=design">Decorazioni 
+  anni '80 con Photoshop</A></LI>
+  <LI><A href="http://www.html.it/articoli/copertina-facebook-di-pasqua-con-photoshop/?cref=design">Copertina 
+  Facebook di Pasqua con Photoshop</A></LI></UL>
+<UL class="subitem-16">
+  <LI><A href="http://www.html.it/guide/guida-foundation/?cref=design">Guida 
+  Foundation </A></LI>
+  <LI><A href="http://www.html.it/guide/web-design-di-base-consigli-e-best-practices/?cref=design">Web 
+  design di base, consigli e best practices</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-css-di-base/?cref=design">Guida 
+  CSS di base</A></LI>
+  <LI><A href="http://www.html.it/guide/internet-explorer-10-punti-da-approfondire/?cref=design">Internet 
+  Explorer 10 punti da approfondire</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-responsive-design-tecniche-avanzate/?cref=design">Responsive 
+  Web Design - Guida tecniche avanzate</A></LI></UL>
+<UL class="subitem-17">
+  <LI><A href="http://www.html.it/guide/guida-google-webmaster-tools/?cref=design">Guida 
+  Google Webmaster Tools</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-google-analytics/?cref=design">Guida 
+  Google Analytics</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-google-adwords/?cref=design">Guida 
+  Google AdWords</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-google-adsense/?cref=design">Guida 
+  Google AdSense</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-sitemap/?cref=design">Guida 
+  Sitemap</A></LI></UL>
+<UL class="subitem-18">
+  <LI><A href="http://www.html.it/guide/guida-webmatrix/?cref=design">Guida 
+  WebMatrix</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-adobe-dreamweaver-cs55/?cref=design">Guida 
+  Adobe Dreamweaver CS5.5</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-notepad/?cref=design">Guida 
+  Notepad++</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-aptana/?cref=design">Guida 
+  Aptana</A></LI>
+  <LI><A 
+  href="http://www.html.it/guide/guida-visual-studio-2008/?cref=design">Guida 
+  Visual Studio 2008</A></LI></UL>
+<UL class="subitem-19">
+  <LI><A href="http://www.html.it/articoli/alternative-sicure-a-gmail/?cref=system">Webmail 
+  sicure: le migliori</A></LI>
+  <LI><A href="http://www.html.it/articoli/creare-un-finto-access-poin-wifi/?cref=system">Creare 
+  un finto access point WiFi</A></LI>
+  <LI><A href="http://www.html.it/articoli/brute-force-su-ssh-proteggersi-con-fail2ban/?cref=system">Brute 
+  force su SSH: proteggersi con Fail2ban</A></LI>
+  <LI><A href="http://www.html.it/articoli/attacco-brute-force-di-un-form-con-hydra-2/?cref=system">Attacco 
+  brute force di un form con Hydra</A></LI>
+  <LI><A href="http://www.html.it/articoli/cookie-cadger-hijacking-di-una-sessione-in-un-click/?cref=system">Cookie 
+  Cadger: hijacking di una sessione in un click</A></LI></UL>
+<UL class="subitem-20">
+  <LI><A href="http://www.html.it/articoli/google-cloud-platform-quello-che-ce-da-sapere/?cref=system">Google 
+  Cloud Platform: quello che c’è da sapere </A></LI>
+  <LI><A href="http://www.html.it/articoli/come-creare-una-macchina-virtuale-gratuita-in-amazon-ec2/?cref=system">Come 
+  creare una macchina virtuale gratuita in Amazon EC2</A></LI>
+  <LI><A href="http://www.html.it/articoli/creare-uno-stack-lamp-in-una-macchina-virtuale-su-azure/?cref=system">Creare 
+  uno stack LAMP in una macchina virtuale su Azure</A></LI>
+  <LI><A href="http://www.html.it/articoli/virtualizzazione-di-uno-stack-windows-iis-e-phpmysql-su-azure/?cref=system">Virtualizzazione 
+  di uno stack Windows, IIS e PHP/MySQL su Azure</A></LI>
+  <LI><A href="http://www.html.it/articoli/amazon-ec2-tutto-quello-che-ce-da-sapere-2/?cref=system">Amazon 
+  EC2: tutto quello che c'è da sapere</A></LI></UL>
+<UL class="subitem-21">
+  <LI><A href="http://www.html.it/articoli/creare-form-online-7-applicazioni-2/?cref=system">Creare 
+  form online: 7 applicazioni</A></LI>
+  <LI><A href="http://www.html.it/articoli/creare-un-forum-8-applicazioni-web/?cref=system">Creare 
+  un forum: 9 applicazioni web</A></LI>
+  <LI><A href="http://www.html.it/articoli/otixo-piu-cloud-un-solo-account-1/?cref=system">Otixo: 
+  più cloud, un solo account</A></LI>
+  <LI><A href="http://www.html.it/articoli/compilare-e-condividere-codice-online-1/?cref=system">Compilare 
+  e condividere codice online</A></LI>
+  <LI><A href="http://www.html.it/articoli/5-webapp-per-giocare-online-1/?cref=system">5 
+  webapp per giocare online</A></LI></UL>
+<UL class="subitem-22">
+  <LI><A href="http://www.html.it/articoli/definire-prepared-statement-con-mysqli/?cref=system">Definire 
+  prepared statement con MySQLi</A></LI>
+  <LI><A 
+  href="http://www.html.it/articoli/introduzione-a-hypersql/?cref=system">HyperSQL: 
+  mettere in esercizio un database in tempi rapidi</A></LI>
+  <LI><A href="http://www.html.it/articoli/java-nosql-primi-passi-con-mongodb-4/?cref=system">Java 
+   NoSQL: primi passi con MongoDB</A></LI>
+  <LI><A href="http://www.html.it/articoli/nosql-in-java-introduzione-ad-orientdb-1/?cref=system">NoSQL 
+  in java : introduzione ad OrientDB</A></LI>
+  <LI><A href="http://www.html.it/articoli/replication-duplicazione-dei-dati-in-mysql-1/?cref=system">Replication: 
+  duplicazione dei dati in MySQL</A></LI></UL>
+<UL class="subitem-23">
+  <LI><A href="http://www.html.it/articoli/giada-essere-un-vero-dj-con-linux/?cref=system">Giada: 
+  essere un vero DJ con Linux</A></LI>
+  <LI><A href="http://www.html.it/articoli/monitoring-divertente-del-nostro-server-web-con-logstalgia/?cref=system">Monitoring 
+  "divertente" del nostro server web con Logstalgia</A></LI>
+  <LI><A href="http://www.html.it/articoli/linux-i-migliori-player-multimediali-2/?cref=system">Linux: 
+  i migliori player multimediali</A></LI>
+  <LI><A href="http://www.html.it/articoli/monitoring-linux-i-migliori-tool-minimali-per-sysadmin-2/?cref=system">Monitoring 
+  Linux: i migliori tool minimali per sysadmin</A></LI>
+  <LI><A href="http://www.html.it/articoli/linux-i-migliori-tool-per-la-diagnostica-2/?cref=system">Linux: 
+  i migliori tool per la diagnostica</A></LI></UL></DIV>
+<DIV id="header-info">
+<DIV class="header-tags-wrap">
+<DIV class="first-place-item">
+<DIV class="label-item"><SPAN class="text-item">Più visti</SPAN><SPAN class="corner-item"></SPAN></DIV>
+<UL>
+  <LI><A href="http://www.html.it/tag/ios/">IOS</A></LI>
+  <LI><A href="http://www.html.it/tag/responsive-design/">Responsive 
+  Design</A></LI>
+  <LI><A href="http://www.html.it/tag/ipad/">iPad</A></LI>
+  <LI><A href="http://www.html.it/tag/iphone/">iPhone</A></LI>
+  <LI><A href="http://www.html.it/tag/html5/">HTML5</A></LI></UL></DIV>
+<DIV class="second-place-item">
+<DIV class="label-item"><SPAN class="text-item">Nuovi trend</SPAN><SPAN class="corner-item"></SPAN></DIV>
+<UL>
+  <LI><A href="http://www.html.it/tag/responsive-design/">Responsive 
+  Design</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-windows-server-2012/">Windows 
+  Server 2012</A></LI></UL></DIV></DIV>
+<DIV class="top-social-item">
+<UL class="social-link-item">
+  <LI><A class="g-item" href="https://plus.google.com/u/0/107547047485896352781/" 
+  target="_blank"></A></LI>
+  <LI><A class="f-item" href="https://www.facebook.com/HTML.it" 
+  target="_blank"></A></LI>
+  <LI><A class="t-item" href="https://twitter.com/html_it" 
+  target="_blank"></A></LI></UL>
+<UL class="tool-link-item">
+  <LI><A class="nl-item" href="http://newsletter.html.it/"></A></LI>
+  <LI><A class="rss-item" 
+href="http://rss.html.it/"></A></LI></UL></DIV></DIV></DIV>
+<DIV class="banner-container spaceV-box leaderboard">
+<DIV class="banner-content">
+<STYLE type="text/css">
+/*** NON CANCELLARE - CSS PER SPAZIARE BANNER **/
+.banner-content {margin: 5px 0 10px 15px;}
+</STYLE>
+
+<SCRIPT type="text/javascript">
+if (typeof(et_ord)=='undefined')
+et_ord=Math.floor(Math.random()*10000000000000000);
+if (typeof(et_tile)=='undefined') et_tile=1;
+document.write('<scr'+'ipt language="JavaScript" src="http://ad-emea.doubleclick.net/adj/dqa.tag.html.it/development;sz=980x30;tile=' + (et_tile++) + ';ord=' + et_ord + '?" type="text/javascript"></scr' + 'ipt>');
+</SCRIPT>
+</DIV></DIV>
+<DIV id="wrap-content">
+<DIV id="internal-content">
+<DIV id="content-article">
+<DIV id="post-19304" class="post-19304 pag type-pag status-publish format-standard hentry category-design category-development category-javascript category-xhtml tag-html5">
+<DIV class="article-top-item">
+<UL class="crunch-item">
+  <LI><A class="dev-text" 
+  href="http://www.html.it/development/">Development</A><SPAN></SPAN></LI>
+  <LI><A class="dev-text" 
+  href="http://www.html.it/javascript/">JavaScript</A><SPAN></SPAN></LI>
+  <LI><A class="dev-text" 
+  href="http://www.html.it/javascript/guide">Guide</A><SPAN></SPAN></LI>
+  <LI><A class="dev-text" href="http://www.html.it/guide/guida-html5/">Guida 
+  HTML5</A></LI></UL>
+<UL class="tool-item">
+  <LI class="zoom-in-item"><A href="http://www.html.it/pag/19304/canvas-un-esempio-pratico/#"></A></LI>
+  <LI class="zoom-out-item"><A href="http://www.html.it/pag/19304/canvas-un-esempio-pratico/#"></A></LI>
+  <LI class="print-item"><A href="http://www.html.it/pag/19304/canvas-un-esempio-pratico/#"></A></LI></UL></DIV>
+<DIV class="article-header-item">
+<H1>                                Canvas: un esempio pratico                   
+         </H1>
+<DIV class="meta-test">
+<UL class="social-page-item">
+  <LI class="forum-item"><A href="http://forum.html.it/"></A></LI>
+  <LI class="fb-item">
+  <DIV class="fb-like" data-show-faces="false" data-width="100" data-layout="button_count" 
+  data-send="false"></DIV></LI>
+  <LI class="tt-item"><A class="twitter-share-button" href="https://twitter.com/share" 
+  data-lang="it" data-via="h_htmlit">Tweet</A></LI>
+  <LI class="g-item"><g:plusone size="medium"></g:plusone></LI></UL>
+<P>4 aprile 2011</P></DIV>
+<SCRIPT>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</SCRIPT>
+
+<SCRIPT type="text/javascript">
+  window.___gcfg = {lang: 'it'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</SCRIPT>
+
+<DIV id="fb-root"></DIV>
+<SCRIPT>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</SCRIPT>
+</DIV>
+<DIV class="sub-info-item">
+<DIV class="author-item"><A href="http://www.html.it/autore/sbonati/"><IMG 
+class="photo" alt="Simone Bonati" src="">Simone 
+Bonati<SPAN></SPAN></A></DIV></DIV>
+<DIV class="entry guide-item content-text">
+<H2>Un esempio</H2>
+<P>Ora che abbiamo almeno un’idea delle potenzialità dello strumento che stiamo 
+analizzando, accingiamoci ad una sperimentazione pratica attraverso il progetto 
+guida. Quello che faremo sarà dare la possibilità agli utenti della fiveboard di 
+<STRONG>disegnare utilizzando un canvas</STRONG>, lo stesso verrà poi 
+memorizzato insieme al testo sul già noto <CODE>localStorage</CODE>. 
+Introduciamo anche in questo contesto il concetto di <CODE>EventoCustom</CODE>, 
+la possibilità cioè di lanciare arbitrariamente eventi in tutto e per tutto 
+simili a quelli utilizzati dal DOM. Questa feature ci sarà utilissima per 
+mantenere un codice elegante e contemporaneamente sincronizzare salvataggio e 
+recupero di testo e canvas dal <CODE>localStorage</CODE>; aggiungiamo ad 
+application.js il seguente metodo:</P><PRE class="brush:js">lanciaEvento = function(nome_evento){ 
+  var evento = document.createEvent("CustomEvent"); 
+  evento.initCustomEvent(nome_evento, true, true, titolo_fiveboard); 
+  document.dispatchEvent(evento);
+}
+
+</PRE>
+<P>Eliminiamo successivamente dallo stesso file le funzioni 
+<CODE>salvaIlDato</CODE> e <CODE>recuperaIlDato</CODE> sostituendole con le 
+seguenti:</P><PRE class="brush:js">salvaAppunti = function(evento){ 
+  localStorage.setItem("fb_" + evento.detail,
+    document.forms['form_da_ricordare'].elements['testo_da_ricordare'].value 
+  );
+  alert("Appunti salvati");
+}
+
+recuperaAppunti = function(evento){ 
+  document.forms['form_da_ricordare'].elements['testo_da_ricordare'].value =
+localStorage.getItem("fb_" + evento.detail); 
+  alert("Appunti recuperati");
+}
+
+document.addEventListener('salvadato', salvaAppunti); 
+document.addEventListener('recuperadato', recuperaAppunti);
+
+</PRE>
+<P>Bene, ora abbiamo creato le due funzioni e le abbiamo registrate 
+rispettivamente agli eventi custom ‘<CODE>salvadato</CODE>’ e 
+‘<CODE>recuperadato</CODE>’; ora non ci resta che scatenare questi eventi al 
+click dei bottoni del file index.html, modifichiamo quindi come segue:</P><PRE class="brush:html">...
+  &lt;menu type="toolbar"&gt; 
+    &lt;button type="button" onclick="lanciaEvento('salvadato');"&gt;
+      Memorizza quanto scritto 
+    &lt;/button&gt;
+    &lt;button type="button" onclick="lanciaEvento('recuperadato');"&gt; 
+      Recupera l'ultimo testo memorizzato
+    &lt;/button&gt; 
+  &lt;/menu&gt;
+...
+
+</PRE>
+<P>Ottimo! Ora possiamo aggiungere un canvas poco prima della fine della pagina 
+e procedere con il nostro esperimento:</P><PRE class="brush:html">...
+  &lt;canvas id="drawboard"&gt;&lt;/canvas&gt; 
+  &lt;/form&gt;
+...
+
+</PRE>
+<P>In un file chiamato canvas.js, sempre nella cartella js, scriviamo:</P><PRE class="brush:js">var ctx	= null; 
+var started	= false;
+
+iniziaDisegno = function(evento){ 
+  ctx.beginPath(); 
+  ctx.moveTo(evento.offsetX,evento.offsetY); 
+  started = true;
+}
+
+disegna = function(evento){ 
+  if(started){
+    ctx.lineTo(evento.offsetX,evento.offsetY); 
+    ctx.stroke();
+  }
+}
+
+fermaDisegno = function(evento){ 
+  ctx.closePath(); 
+  started = false;
+}
+
+salvaCanvas = function(evento){ 
+  localStorage.setItem("canvas_fb_" + evento.detail, ctx.canvas.toDataURL('image/png')); 
+  alert("Canvas salvato");
+}
+
+recuperaCanvas = function(evento){ 
+  var immagine_salvata = localStorage.getItem("canvas_fb_" + evento.detail); 
+  if(immagine_salvata == null) return;
+  var img = new Image(); 
+  img.src = immagine_salvata; 
+  ctx.canvas.width = ctx.canvas.width; 
+  ctx.drawImage(img, 0, 0); 
+  alert("Canvas recuperato");
+}
+
+attivaIlCanvas = function(evento){ 
+  ctx = document.querySelector('canvas').getContext('2d');
+  ctx.canvas.addEventListener('mousedown' , iniziaDisegno,false );
+  ctx.canvas.addEventListener('mousemove' , disegna	,false );
+  ctx.canvas.addEventListener('mouseup' ,   fermaDisegno ,false );
+  ctx.canvas.addEventListener('mouseleave', fermaDisegno ,false );
+  document.addEventListener('salvadato', salvaCanvas	); 
+  document.addEventListener('recuperadato', recuperaCanvas	);
+} 
+
+window.addEventListener('load' ,attivaIlCanvas,false);
+
+</PRE>
+<P>Approfondiamo un po’ quanto scritto: la funzione appena qui sopra 
+‘<CODE>attivaIlCanvas</CODE>’ viene eseguita al load della pagina e si preoccupa 
+di registrare tutti gli handler necessari alla gestione delle funzioni di 
+disegno e di registrazione. In particolare <CODE>iniziaDisegno</CODE>, disegna e 
+<CODE>fermaDisegno</CODE> utilizzano alcune funzioni che abbiamo esplorato nelle 
+specifiche per disegnare delle spezzate che seguono la posizione del mouse. 
+<CODE>salvaCanvas</CODE> e <CODE>recuperaCanvas</CODE> sono invece funzioni che 
+vengono attivate dai nostri eventi custom; in questo caso la parte interessante 
+è da ricercarsi nell’utilizzo del metodo <CODE>toDataUrl</CODE> che trasforma il 
+contenuto del canvas in una stringa, rendendolo quindi memorizzabile all’interno 
+dell’hash <CODE>localStorage</CODE>. In <CODE>recuperaCanvas</CODE> poi, la 
+stessa stringa contenente l’immagine viene utilizzata come attributo 
+<CODE>src</CODE> di un oggetto <CODE>Image</CODE> e successivamente ridipinta 
+sul canvas.</P>
+<P>Ricordiamoci di richiedere il file canvas.js all’interno della pagina 
+index.html e <A href="http://www.html.it/guide/esempi/html5/esempi/lezione_canvas/fiveboard/index.html" 
+target="_blank">proviamo la nostra creazione</A> (figura 1):</P>
+<DIV class="boximg">
+<P>Figura 1</P><IMG alt="screenshot" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/9.jpg">
+</DIV>
+<H2>Conclusioni</H2>
+<P>Il canvas è uno strumento incredibilmente vasto, potente ed articolato. La 
+panoramica offerta da questa lezione introduce in modo abbastanza esauriente 
+l’insieme delle tematiche anche se per non dilungarsi troppo non ne 
+approfondisce nessuna. Nonostante questa evidente ricchezza il canvas resta 
+comunque uno strumento di basso livello e permane in uno stato di difficile 
+utilizzo a meno che non sia supportato dai dovuti framework, come ad esempio <A 
+href="http://processingjs.org/" target="_blank">processing.js</A>, <A href="http://www.davidflanagan.com/2010/07/cantojs-an-impr.html" 
+target="_blank">canto.js</A> e l’ottimo <A 
+href="http://easeljs.com/">Easel.js</A>. In questa lezione si è inoltre 
+volutamente ignorato il tema dell’interazione tra canvas e video, che verrà 
+affrontato nel dovuto dettaglio nella prossima lezione di questa guida.</P>
+<DIV id="htmlit_list" 
+title="http://www.html.it/guide/esempi/html5/cap5.xml"></DIV>
+<DIV id="upcloo_1000" class="upcloo-widget"></DIV>
+<SCRIPT type="text/javascript">
+(function(g,d,id){
+  upCloo = g.upCloo || []; 
+  upCloo.push(
+    {
+        "permalink" : "http://www.html.it/pag/19304/canvas-un-esempio-pratico/",
+        "siteKey" : "it-fu23SLklb"
+            }
+  );
+  var s = d.createElement('script') , n = d.getElementsByTagName('script')[0]; 
+  s.type = 'text/javascript';
+  s.async = true;s.id = id;
+  s.src = '//r.upcloo.com/a/a.js';
+  !d.getElementById(id) ? n.parentNode.insertBefore(s,n) :false;
+})(this,document,'upcloo_js_sdk')
+</SCRIPT>
+<!-- Paginazione singola lezione --><!--
+				                <div class="navigation-item nav-txt">
+                    <span class="navigation-label">Pagina:</span>
+                    <a href="http://www.html.it/pag/19262/introduzione77/">1</a><a href="http://www.html.it/pag/19263/da-html-4-ad-html5/">2</a><a href="http://www.html.it/pag/19264/la-sintassi-di-html5/">3</a><a href="http://www.html.it/pag/19265/elementi-disegnati-per-un-web-moderno/">4</a><a href="http://www.html.it/pag/19266/attributi-globali/">5</a><a href="http://www.html.it/pag/19267/un-nuovo-content-model/">6</a><a href="http://www.html.it/pag/19268/panoramica-sui-content-model-e-presentazione-del-primo-progetto-guida/">7</a><a href="http://www.html.it/pag/19269/header/">8</a><a href="http://www.html.it/pag/19270/footer/">9</a><a href="http://www.html.it/pag/19271/section/">10</a><a href="http://www.html.it/pag/19272/article/">11</a><a href="http://www.html.it/pag/19273/nav/">12</a><a href="http://www.html.it/pag/19274/aside/">13</a><a href="http://www.html.it/pag/19275/hgroup/">14</a><a href="http://www.html.it/pag/19276/mark/">15</a><a href="http://www.html.it/pag/19277/time-e-gli-attributi-pubdate-e-datetime/">16</a><a href="http://www.html.it/pag/19278/meter/">17</a><a href="http://www.html.it/pag/19279/progress/">18</a><a href="http://www.html.it/pag/19280/altri-tag/">19</a><a href="http://www.html.it/pag/19281/i-form-in-html5-una-panoramica/">20</a><a href="http://www.html.it/pag/19282/nuovi-attributi-per-i-form-autofocus-placeholder-e-form/">21</a><a href="http://www.html.it/pag/19283/nuovi-attributi-dei-form-per-la-validazione/">22</a><a href="http://www.html.it/pag/19284/input-type-tel/">23</a><a href="http://www.html.it/pag/19285/input-type-search/">24</a><a href="http://www.html.it/pag/19286/input-type-url/">25</a><a href="http://www.html.it/pag/19287/input-type-email/">26</a><a href="http://www.html.it/pag/19288/nuovi-tipi-di-input-per-la-gestione-delle-date/">27</a><a href="http://www.html.it/pag/19289/input-type-number/">28</a><a href="http://www.html.it/pag/19290/input-type-range/">29</a><a href="http://www.html.it/pag/19291/input-type-color/">30</a><a href="http://www.html.it/pag/19292/cosa-sono-le-datalist/">31</a><a href="http://www.html.it/pag/19293/la-potenza-dei-microdati/">32</a><a href="http://www.html.it/pag/19294/un-template-per-blog-in-html5/">33</a><a href="http://www.html.it/pag/19295/nuova-linfa-alle-applicazioni-web/">34</a><a href="http://www.html.it/pag/19296/applicazioni-web-offline-file-manifest/">35</a><a href="http://www.html.it/pag/19297/indexed-database-api/">36</a><a href="http://www.html.it/pag/19298/webstorage-api/">37</a><a href="http://www.html.it/pag/19299/web-workers-api/">38</a><a href="http://www.html.it/pag/19300/websocket-api/">39</a><a href="http://www.html.it/pag/19301/drag-and-drop/">40</a><a href="http://www.html.it/pag/19302/geolocation-api/">41</a><a href="http://www.html.it/pag/19303/canvas1/">42</a><span>43</span><a href="http://www.html.it/pag/19305/video/">44</a><a href="http://www.html.it/pag/19306/video-e-canvas-un-esempio-pratico/">45</a><a href="http://www.html.it/pag/19307/audio/">46</a><a href="http://www.html.it/pag/19308/svg-e-mathml/">47</a><a href="http://www.html.it/pag/19309/una-lavagna-virtuale/">48</a><a href="http://www.html.it/pag/19310/feature-detection-e-strategie-di-fallback/">49</a><a href="http://www.html.it/pag/19311/appendice-tabelle-del-supporto-sui-browser-di-html5/">50</a>
+                </div>				--><!-- Paginazione Lezioni -->
+<DIV class="row responsive-grid example-1">
+<DIV class="col-1-4"><A class="index btn" href="http://www.html.it/guide/guida-html5/">Tutte 
+le lezioni</A>
+<FORM><SELECT onchange="self.location.href=this.value;"><OPTGROUP label="Le basi di HTML5"><OPTION 
+    value="http://www.html.it/pag/19262/introduzione77/">1. 
+    Introduzione</OPTION><OPTION value="http://www.html.it/pag/19263/da-html-4-ad-html5/">2. 
+    Da HTML 4 ad HTML5</OPTION><OPTION value="http://www.html.it/pag/19264/la-sintassi-di-html5/">3. 
+    La sintassi di HTML5</OPTION><OPTION value="http://www.html.it/pag/19265/elementi-disegnati-per-un-web-moderno/">4. 
+    Elementi disegnati per un web moderno</OPTION><OPTION value="http://www.html.it/pag/19266/attributi-globali/">5. 
+    Attributi globali</OPTION><OPTION value="http://www.html.it/pag/19267/un-nuovo-content-model/">6. 
+    Un nuovo content model</OPTION><OPTION value="http://www.html.it/pag/19268/panoramica-sui-content-model-e-presentazione-del-primo-progetto-guida/">7. 
+    Panoramica sui content model e presentazione del primo progetto 
+    guida</OPTION></OPTGROUP><OPTGROUP label="Nuovi elementi strutturali e semantici"><OPTION 
+    value="http://www.html.it/pag/19269/header/">8. Header</OPTION><OPTION 
+    value="http://www.html.it/pag/19270/footer/">9. Footer</OPTION><OPTION 
+    value="http://www.html.it/pag/19271/section/">10. Section</OPTION><OPTION 
+    value="http://www.html.it/pag/19272/article/">11. Article</OPTION><OPTION 
+    value="http://www.html.it/pag/19273/nav/">12. Nav</OPTION><OPTION value="http://www.html.it/pag/19274/aside/">13. 
+    Aside</OPTION><OPTION value="http://www.html.it/pag/19275/hgroup/">14. 
+    Hgroup</OPTION><OPTION value="http://www.html.it/pag/19276/mark/">15. 
+    Mark</OPTION><OPTION value="http://www.html.it/pag/19277/time-e-gli-attributi-pubdate-e-datetime/">16. 
+    Time e gli attributi pubdate e datetime</OPTION><OPTION value="http://www.html.it/pag/19278/meter/">17. 
+    Meter</OPTION><OPTION value="http://www.html.it/pag/19279/progress/">18. 
+    Progress</OPTION><OPTION value="http://www.html.it/pag/19280/altri-tag/">19. 
+    Altri tag</OPTION></OPTGROUP><OPTGROUP label="I form: nuovi attributi e tipi di input"><OPTION 
+    value="http://www.html.it/pag/19281/i-form-in-html5-una-panoramica/">20. I 
+    form in HTML5: una panoramica</OPTION><OPTION value="http://www.html.it/pag/19282/nuovi-attributi-per-i-form-autofocus-placeholder-e-form/">21. 
+    Nuovi attributi per i form: autofocus, placeholder e form</OPTION><OPTION 
+    value="http://www.html.it/pag/19283/nuovi-attributi-dei-form-per-la-validazione/">22. 
+    Nuovi attributi dei form per la validazione</OPTION><OPTION value="http://www.html.it/pag/19284/input-type-tel/">23. 
+    Input type: tel</OPTION><OPTION value="http://www.html.it/pag/19285/input-type-search/">24. 
+    Input type: search</OPTION><OPTION value="http://www.html.it/pag/19286/input-type-url/">25. 
+    Input type: url</OPTION><OPTION value="http://www.html.it/pag/19287/input-type-email/">26. 
+    Input type: email</OPTION><OPTION value="http://www.html.it/pag/19288/nuovi-tipi-di-input-per-la-gestione-delle-date/">27. 
+    Nuovi tipi di input per la gestione delle date</OPTION><OPTION value="http://www.html.it/pag/19289/input-type-number/">28. 
+    Input type: number</OPTION><OPTION value="http://www.html.it/pag/19290/input-type-range/">29. 
+    Input type: range</OPTION><OPTION value="http://www.html.it/pag/19291/input-type-color/">30. 
+    Input type: color</OPTION><OPTION value="http://www.html.it/pag/19292/cosa-sono-le-datalist/">31. 
+    Cosa sono le datalist?</OPTION></OPTGROUP><OPTGROUP 
+    label="I microdati"><OPTION value="http://www.html.it/pag/19293/la-potenza-dei-microdati/">32. 
+    La potenza dei microdati</OPTION></OPTGROUP><OPTGROUP label="Primo progetto guida"><OPTION 
+    value="http://www.html.it/pag/19294/un-template-per-blog-in-html5/">33. Un 
+    template per blog in HTML5</OPTION></OPTGROUP><OPTION value="http://www.html.it/pag/19295/nuova-linfa-alle-applicazioni-web/">34. 
+  Nuova linfa alle applicazioni web</OPTION><OPTION value="http://www.html.it/pag/19296/applicazioni-web-offline-file-manifest/">35. 
+  Applicazioni web offline (file .manifest)</OPTION><OPTION value="http://www.html.it/pag/19297/indexed-database-api/">36. 
+  Indexed Database API</OPTION><OPTION value="http://www.html.it/pag/19298/webstorage-api/">37. 
+  WebStorage API</OPTION><OPTION value="http://www.html.it/pag/19299/web-workers-api/">38. 
+  Web Workers API</OPTION><OPTION value="http://www.html.it/pag/19300/websocket-api/">39. 
+  WebSocket API</OPTION><OPTION value="http://www.html.it/pag/19301/drag-and-drop/">40. 
+  Drag and Drop</OPTION><OPTION value="http://www.html.it/pag/19302/geolocation-api/">41. 
+  Geolocation API</OPTION><OPTION 
+  value="http://www.html.it/pag/19303/canvas1/">42. Canvas</OPTION><OPTION 
+  selected="" 
+  value="http://www.html.it/pag/19304/canvas-un-esempio-pratico/">43. Canvas: un 
+  esempio pratico</OPTION><OPTION 
+  value="http://www.html.it/pag/19305/video/">44. Video</OPTION><OPTION value="http://www.html.it/pag/19306/video-e-canvas-un-esempio-pratico/">45. 
+  Video e Canvas: un esempio pratico</OPTION><OPTION value="http://www.html.it/pag/19307/audio/">46. 
+  Audio</OPTION><OPTION value="http://www.html.it/pag/19308/svg-e-mathml/">47. 
+  SVG e MathML</OPTION><OPTION value="http://www.html.it/pag/19309/una-lavagna-virtuale/">48. 
+  Una ‘lavagna virtuale’</OPTION><OPTION value="http://www.html.it/pag/19310/feature-detection-e-strategie-di-fallback/">49. 
+  Feature detection e strategie di fallback</OPTION><OPTION value="http://www.html.it/pag/19311/appendice-tabelle-del-supporto-sui-browser-di-html5/">50. 
+  Appendice: Tabelle del supporto sui browser di 
+HTML5</OPTION></SELECT></FORM></DIV>
+<DIV class="col-1-4">
+<P class="prev"><A class="btn" 
+href="http://www.html.it/pag/19303/canvas1/"><SPAN 
+class="icon-chevron-left"></SPAN>Canvas</A></P></DIV>
+<DIV class="col-1-4">
+<P class="numbers"><A href="http://www.html.it/pag/19262/introduzione77/">1</A> 
+... <A href="http://www.html.it/pag/19303/canvas1/">42</A> 43 <A href="http://www.html.it/pag/19305/video/">44</A> 
+... <A href="http://www.html.it/pag/19311/appendice-tabelle-del-supporto-sui-browser-di-html5/">50</A><!--<a href="http://www.html.it/pag/16027/come-funziona-un-browser/">2</a>
+                                              <a href="http://www.html.it/pag/16028/prima-di-cominciare-davvero-lo-standard-html/">3</a>--></P></DIV>
+<DIV class="col-1-4">
+<P class="next"><A class="btn" 
+href="http://www.html.it/pag/19305/video/">Video<SPAN 
+class="icon-chevron-right"></SPAN></A></P></DIV></DIV><!-- /.row -->
+<DIV class="row example-rwd">
+<DIV class="col-1-3">
+<P class="next"><A class="btn" 
+href="http://www.html.it/pag/19305/video/">Video<SPAN 
+class="icon-chevron-right"></SPAN></A></P></DIV>
+<DIV class="col-x">
+<P class="numbers"><A href="http://www.html.it/pag/19262/introduzione77/">1</A> 
+... <A href="http://www.html.it/pag/19303/canvas1/">42</A> 43 <A href="http://www.html.it/pag/19305/video/">44</A> 
+... <A href="http://www.html.it/pag/19311/appendice-tabelle-del-supporto-sui-browser-di-html5/">50</A><!--<a href="http://www.html.it/pag/16027/come-funziona-un-browser/">2</a>
+                                              <a href="http://www.html.it/pag/16028/prima-di-cominciare-davvero-lo-standard-html/">3</a>--></P></DIV>
+<DIV class="col-1-3"><A class="index btn" href="http://www.html.it/guide/guida-html5/">Tutte 
+le lezioni</A></DIV></DIV><!-- /.row -->
+<SCRIPT type="text/javascript">var _newslettertitle_ = 'Guida HTML5';</SCRIPT>
+
+<DIV style="display: none;" id="newsletter_div" class="newletter-item">
+<H6>Se vuoi aggiornamenti su <SPAN>Guida HTML5</SPAN>  inserisci la tua e-mail 
+nel box qui sotto:</H6>
+<DIV id="newsletter_box" class="newsletter-panel">
+<FORM name="newsletterform"><INPUT onblur="if (this.value=='') this.value='Inserisci la tua mail';" 
+onfocus="if (this.value!='' || !check_mail(this.value)) this.value='';" name="n_email" 
+value="Inserisci la tua mail" type="text">
+<DIV class="line-item"><INPUT id="radP1a" name="trattamento_privacy" value="1" 
+type="radio"><LABEL class="radio-item">Sì</LABEL><INPUT id="radP1b" name="trattamento_privacy" 
+value="0" type="radio"><LABEL class="radio-item">No</LABEL>
+<DIV class="lable-text">Ho letto e acconsento l'<A href="http://www.gruppohtml.it/privacy.aspx" 
+target="_blank">informativa sulla privacy</A></DIV></DIV>
+<DIV class="line-item"><INPUT id="radP2a" name="n_inviadem" value="1" type="radio"><LABEL 
+class="radio-item">Sì</LABEL><INPUT id="radP2b" name="n_inviadem" value="0" 
+type="radio"><LABEL class="radio-item">No</LABEL>
+<DIV class="lable-text">Acconsento al trattamento dei dati personali di cui al 
+punto 3 dell'<A href="http://www.gruppohtml.it/privacy.aspx" 
+target="_blank">informativa sulla privacy</A></DIV></DIV><INPUT id="newsletter_subscribe" onclick="try_register()" type="button"></FORM></DIV>
+</DIV>
+<SCRIPT type="text/javascript">
+		document.getElementById("newsletter_div").style.display = "block";
+		</SCRIPT>
+
+<DIV class="tag-item"><SPAN>Tags:</SPAN> <A href="http://www.html.it/tag/html5/" 
+rel="tag">HTML5</A></DIV></DIV></DIV></DIV>
+<DIV id="sidebar">
+<DIV class="banner-container spaceV-box medium-rectangle-up">
+<DIV class="banner-content">
+<SCRIPT type="text/javascript">
+if (typeof(et_ord)=='undefined')
+et_ord=Math.floor(Math.random()*10000000000000000);
+if (typeof(et_tile)=='undefined')  et_tile=1;
+document.write('<scr'+'ipt language="JavaScript" src="http://ad-emea.doubleclick.net/adj/dqa.tag.html.it/development;dcopt=ist;sz=300x250,300x600;tile=' + (et_tile++) + ';ord=' + et_ord + '?" type="text/javascript"></scr' + 'ipt>');
+</SCRIPT>
+</DIV></DIV>
+<DIV id="related-posts-widget">
+<H3>Correlati</H3>
+<UL>
+  <LI><A href="http://www.html.it/guide/guida-css-di-base/">Guida CSS di 
+  base</A></LI>
+  <LI><A href="http://www.html.it/guide/guida-html/">Guida HTML</A></LI>
+</UL></DIV>
+<DIV class="clearfix"></DIV>
+<DIV class="textwidget">
+<DIV class="sidebar-list"><SPAN class="article-sidebar-title dev-text">
+<H2>Articoli in Evidenza</H2></SPAN>
+<UL>
+  <LI>
+  <H3><A title="Integrare Facebook nel proprio Sito" href="http://www.html.it/articoli/integrare-facebook-nel-proprio-sito-web-1/">Integrare 
+  Facebook nel proprio Sito</A></H3></LI>
+  <LI>
+  <H3><A title="Gestione Database in Android" href="http://www.html.it/articoli/la-gestione-dei-database-in-android-1/">Gestione 
+  Database in Android</A></H3></LI>
+  <LI>
+  <H3><A title="File htaccess in Apache" href="http://www.html.it/articoli/i-file-htaccess-in-apache-1/">File 
+  htaccess in Apache</A></H3></LI>
+  <LI>
+  <H3><A title="Costruire App Mobile con Phonegap" href="http://www.html.it/articoli/applicazioni-mobile-con-phonegap-1/">Costruire 
+  App Mobile con Phonegap</A></H3></LI>
+  <LI>
+  <H3><A title="Form in HTML5" href="http://www.html.it/articoli/un-form-in-html5-1/">Form 
+  in HTML5</A></H3></LI></UL></DIV></DIV>
+<DIV class="textwidget">
+<DIV class="sidebar-list"><!-- Begin -  Site: Default Site Zone: Box Sponsor ROS New HTML.it -->
+<SCRIPT language="javascript" type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 1016;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=82779&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=82779&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</SCRIPT>
+<!-- End -  Site: Default Site Zone: Box Sponsor ROS New HTML.it --></DIV></DIV>
+<DIV class="textwidget">
+<DIV class="sidebar-list"><SPAN class="article-sidebar-title dev-text">
+<H2>Guide in Evidenza</H2></SPAN>
+<UL>
+  <LI>
+  <H3><A title="Guida Android" 
+  href="http://www.html.it/guide/guida-android/">Guida Android</A></H3></LI>
+  <LI>
+  <H3><A title="HTML5" 
+  href="http://www.html.it/guide/guida-html5/">HTML5</A></H3></LI>
+  <LI>
+  <H3><A title="Guida Java" href="http://www.html.it/guide/guida-java/">Guida 
+  Java</A></H3></LI>
+  <LI>
+  <H3><A title="jQuery" 
+  href="http://www.html.it/guide/guida-jquery/">jQuery</A></H3></LI>
+  <LI>
+  <H3><A title="Python" 
+  href="http://www.html.it/guide/guida-python/">Python</A></H3></LI></UL>
+</DIV></DIV>
+<DIV class="textwidget"><!-- Begin -  Site: Default Site Zone: Advertorial HP HTML.it new Development -->
+<SCRIPT language="javascript" type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 1012;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=90234&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=90234&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</SCRIPT>
+<!-- End -  Site: Default Site Zone: Advertorial HP HTML.it new Development --></DIV>
+<DIV class="textwidget"><!-- Begin -  Site: Default Site Zone: Advertorial HP HTML.it new Design -->
+<SCRIPT language="javascript" type="text/javascript">
+<!--
+var browName = navigator.appName;
+var SiteID = 1;
+var ZoneID = 1013;
+var browDateTime = (new Date()).getTime();
+if (browName=='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;Browser=NETSCAPE4&amp;PageID=26470&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+if (browName!='Netscape')
+{
+document.write('<s'+'cript lang' + 'uage="jav' + 'ascript" src="http://adserver.html.it/a.aspx?ZoneID=' + ZoneID + '&amp;Task=Get&amp;IFR=False&amp;PageID=26470&amp;SiteID=' + SiteID + '&amp;Random=' + browDateTime  + '">'); document.write('</'+'scr'+'ipt>');
+}
+// --> 
+</SCRIPT>
+<!-- End -  Site: Default Site Zone: Advertorial HP HTML.it new Design --></DIV>
+<DIV class="sidebar-list"><SPAN class="article-sidebar-title">
+<H2 class="corsi">Corsi</H2></SPAN>
+<UL>
+  <LI><A href="http://corsi.html.it/corso-multimedia-e-web-design/diurno/design-e-usabilita-dei-siti-web" 
+  rel="nofollow" target="_blank">
+  <H3 class="corsi">Corso Progettazione e Design Layout Web</H3>
+  <P>18 Settembre 2013 | Milano - Aule</P></A></LI>
+  <LI><A href="http://corsi.html.it/corso-sviluppo-web/diurno/webmaster-con-ajax" 
+  rel="nofollow" target="_blank">
+  <H3 class="corsi">Corso JQuery e Ajax per Webmaster</H3>
+  <P>23 Settembre 2013 | Roma Polo Didattico</P></A></LI></UL></DIV>
+<DIV class="sidebar-list"><SPAN class="article-sidebar-title">
+<H2 class="corsi">Corsi</H2></SPAN>
+<UL>
+  <LI><A href="http://corsi.html.it/corso-multimedia-e-web-design/diurno/design-e-usabilita-dei-siti-web" 
+  rel="nofollow" target="_blank">
+  <H3 class="corsi">Corso Progettazione e Design Layout Web</H3>
+  <P>18 Settembre 2013 | Milano - Aule</P></A></LI>
+  <LI><A href="http://corsi.html.it/corso-sviluppo-web/diurno/webmaster-con-ajax" 
+  rel="nofollow" target="_blank">
+  <H3 class="corsi">Corso JQuery e Ajax per Webmaster</H3>
+  <P>23 Settembre 2013 | Roma Polo Didattico</P></A></LI></UL></DIV>
+<DIV class="banner-container spaceV-box medium-rectangle-dw">
+<DIV class="banner-content">
+<SCRIPT type="text/javascript">
+if (typeof(et_ord)=='undefined')
+et_ord=Math.floor(Math.random()*10000000000000000);
+if (typeof(et_tile)=='undefined') et_tile=1;
+document.write('<scr'+'ipt language="JavaScript" src="http://ad-emea.doubleclick.net/adj/dqa.tag.html.it/development_down;sz=300x250;tile=' + (et_tile++) + ';ord=' + et_ord + '?" type="text/javascript"></scr' + 'ipt>');
+</SCRIPT>
+</DIV></DIV>
+<SCRIPT type="text/javascript">
+			$(document).ready(function() {
+				$.waypoints.settings.scrollThrottle = 10;
+				$('.medium-rectangle-dw').waypoint(function(event, direction) {
+					$(this).toggleClass('sticky', direction === "down");
+					event.stopPropagation();
+					});
+				$('.sticky-bottom').waypoint(function(event, direction) {
+					$('.medium-rectangle-dw').toggleClass('sticky-bottom', direction === "down");
+					});
+			});
+	</SCRIPT>
+
+<DIV class="sticky-bottom"></DIV></DIV></DIV></DIV>
+<DIV id="footer">
+<DIV class="footer-top">
+<DIV class="footer-info"><A class="logo-footer" 
+title="HTML.it"></A><SPAN>HTML.it è un periodico telematico<BR> reg. Trib. Roma 
+n. 309/2008</SPAN></DIV>
+<DIV class="footer-nav">
+<UL>
+  <LI><A title="Pubblicità su HTML.it" href="http://www.tagadvertising.it/Network/1/htmlit.aspx" 
+  rel="nofollow" target="_blank">Pubblicità</A></LI>
+  <LI><A title="Collabora con HTML.it" href="http://job.gruppohtml.it/" rel="nofollow" 
+  target="_blank">Collabora</A></LI><!-- <li><a href="#" rel="nofollow">Lavora con noi</a></li> -->
+  <LI><A title="Contatti" href="http://www.html.it/page/contatti/" rel="nofollow">Contatti</A></LI>
+  <LI><A title="Note legali" href="http://www.html.it/page/note-legali/" rel="nofollow">Note 
+  legali</A></LI></UL></DIV>
+<DIV class="footer-tool">
+<UL>
+  <LI><A class="rss-item" href="http://rss.html.it/" rel="nofollow" target="_blank">Rss</A></LI>
+  <LI><A class="nl-item" href="http://newsletter.html.it/" 
+  rel="nofollow">Newsletter</A></LI><!-- <li><a href="#" rel="nofollow" class="m-item">Mobile</a></li> -->
+  <LI><A class="fb-item" href="https://www.facebook.com/HTML.it" 
+  rel="nofollow">Facebook</A></LI>
+  <LI><A class="tt-item" href="https://twitter.com/html_it" 
+  rel="nofollow">twitter</A></LI></UL></DIV>
+<DIV class="footer-network"><SPAN>Il network di Gruppo HTML</SPAN>
+<UL>
+  <LI class="adsl-item"><A href="http://adsl.html.it/" rel="nofollow" target="_blank"></A></LI><!--<li class="gn-item"><a href="http://www.gamesnation.it/" rel="nofollow" target="_blank"></a></li>--><!--<li class="lx-item"><a href="http://www.luxuryonline.it/" rel="nofollow" target="_blank"></a></li>--><!--<li class="ob-item"><a href="http://www.oneblog.it/" rel="nofollow" target="_blank"></a></li>-->
+  <LI class="dg-item"><A href="http://www.digital.it/" rel="nofollow" target="_blank"></A></LI>
+  <LI class="gs-item"><A href="http://www.greenstyle.it/" rel="nofollow" target="_blank"></A></LI>
+  <LI class="mo-item"><A href="http://www.manageronline.it/" rel="nofollow" 
+  target="_blank"></A></LI><!--<li class="pa-item"><a href="http://www.pubblicaamministrazione.net/" rel="nofollow" target="_blank"></a></li>-->
+  <LI class="dd-item"><A href="http://www.diredonna.it/" rel="nofollow" target="_blank"></A></LI>
+  <LI class="pmi-item"><A href="http://www.pmi.it/" rel="nofollow" target="_blank"></A></LI>
+  <LI class="mt-item"><A href="http://www.motori.it/" rel="nofollow" target="_blank"></A></LI>
+  <LI class="wn-item"><A href="http://www.webnews.it/" rel="nofollow" target="_blank"></A></LI></UL></DIV></DIV>
+<DIV class="footer-bottom"><SPAN>@1997-2013 <A href="http://www.gruppohtml.it/" 
+rel="nofollow">Gruppo HTML</A> | P.Iva: 05985341006</SPAN></DIV></DIV></DIV>
+<DIV class="clear1">&nbsp;</DIV>
+<SCRIPT type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName('script')[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/8442.js";
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shCore.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushAS3.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushBash.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushColdFusion.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushClojure.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushCpp.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushCSharp.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushCss.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushDelphi.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushDiff.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushErlang.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushFSharp.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushGroovy.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushJava.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushJavaFX.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushJScript.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushLatex.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushLinux.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushMatlabKey.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushObjC.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushPerl.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushPhp.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushPlain.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushPowerShell.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushPython.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushR.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushRuby.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushScala.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushSql.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushVb.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/shBrushXml.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://www.html.it/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://www.html.it/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ espandi sorgente';
+	SyntaxHighlighter.config.strings.help = 'info';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Non é stato possibile trovare il file di sintassi per: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Il file di sintassi non é stato configurato per l\'opzione html-script';
+	SyntaxHighlighter.defaults['gutter'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.form.min.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.html.it\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Invio...","cached":"1"};
+/* ]]> */
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/scripts.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"http:\/\/www.html.it\/wp-content\/plugins\/wp-postratings","ajax_url":"http:\/\/www.html.it\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 post at a time.","image":"stars_crystal","image_ext":"gif","max":"5","show_loading":"0","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src=ratingsL10n.plugin_url+"/images/"+ratingsL10n.image+"/rating_over."+ratingsL10n.image_ext;;
+/* ]]> */
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/postratings-js.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.easing-1.3.pack.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.mousewheel-3.0.4.pack.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/jquery.metadata.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Canvas%20un%20esempio%20pratico%20%20Guida%20HTML5%20%20JavaScript%20HTML_it_file/footer.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+jQuery.fn.addRanking = function(postID){
+    $.ajax({
+        type: "GET",
+        url: "http://www.html.it/page/vote_ranking/",
+        data: {post_id: postID},
+        cache: false,
+        success: function (data){
+            self.location.href = data;
+        }
+    });
+}
+$(document).ready(function() {
+    $('.download-item').click(function() {
+        $(this).addRanking($('.ranking_post_id').val());
+    })
+})
+</SCRIPT>
+<!--[if IE 7]>
+  <script type="text/javascript">
+  $(function() {
+   var zIndexNumber = 500;
+   $('div').each(function() {
+   $(this).css('zIndex', zIndexNumber);
+   zIndexNumber -= 5;
+   });
+  });    
+  </script>
+<![endif]--></BODY></HTML>

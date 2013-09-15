@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html> 
+<head>  
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">  
+<title>Example 1</title>  
+<style>    
+<--html {      -ms-touch-action: double-tap-zoom;      }      -->
+</style>
+</head> 
+<body>  
+<div>
+<canvas id="drawS" width="200" height="500" style="border: 1px black dashed;">
+</canvas>
+</div>
+
+<div>
+<canvas id="drawSurface" width="500" height="500" style="border: 1px black dashed;">
+</canvas>  
+</div>
+     
+<script>    
+var _canvas = document.getElementById("drawSurface");   
+var rect = _canvas.getBoundingClientRect(); 
+var _context = _canvas.getContext("2d"); 
+var img2 = new Image();
+img2.src = "images/3.jpg";
+var img = new Image();
+img.src = "images/festa2.jpg";
+        
+_context.fillStyle = "rgba(255, 0, 0, 0.5)";         
+_canvas.addEventListener('mousemove', paintCanvas, false);
+_canvas.addEventListener('click', clickCanvas, false);
+_canvas.addEventListener('dblclick', clickDouble, false);
+
+function paintCanvas(evt) 
+{
+     	  _context.drawImage(img2,evt.clientX-rect.left, evt.clientY-rect.top,20,20);
+}  
+function clickCanvas(evt) 
+{
+      _context.drawImage(img,0, 0,500,500);
+	  
+	  _context.drawImage(img2,(evt.clientX)+4-rect.left, evt.clientY+4-rect.top,50,50);
+	  _context.strokeStyle = "rgb(0,0,0)";
+	  _context.strokeRect (evt.clientX+2, evt.clientY+2, 54, 54);
+	  _context.strokeStyle = "rgb(255,255,255)";
+	  _context.strokeRect (evt.clientX, evt.clientY, 58, 58);
+}  	  
+function clickDouble(evt) 
+{
+      _context.drawImage(img,0, 0,500,500);
+	  
+}  	  
+</script>
+</body>
+</html>
+
